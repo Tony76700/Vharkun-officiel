@@ -1,123 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vhar'Kûn – Royaume Brisé</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Cinzel", serif;
-      background: #0f0f0f;
-      color: #e6e6e6;
-      line-height: 1.6;
-    }
-    header {
-      background: url('banner.png') center/cover no-repeat;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-shadow: 0 0 15px #000;
-    }
-    header h1 {
-      font-size: 3.5rem;
-      color: #d83a2e;
-    }
-    nav {
-      background: #1a1a1a;
-      padding: 10px;
-      text-align: center;
-      border-bottom: 2px solid #d83a2e;
-    }
-    nav a {
-      color: #d83a2e;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    h2 {
-      color: #d83a2e;
-      border-left: 4px solid #d83a2e;
-      padding-left: 10px;
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 15px;
-      margin: 20px 0;
-      border: 1px solid #333;
-      border-left: 4px solid #d83a2e;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      color: #555;
-      margin-top: 40px;
-      border-top: 1px solid #222;
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Les Éclats de Vhar'Kûn — Accueil</title>
+<link rel="icon" href="images/favicon.png"/>
+<style>
+:root{--bg:#060606;--muted:#a6b0b2;--gold:#c9a15b;--accent:#8b0000;--maxw:1100px}
+body{margin:0;background:linear-gradient(180deg,#040404,#0b0b0c);color:#e9e6e3;font-family:Inter,system-ui, -apple-system, 'Segoe UI', Roboto}
+.container{max-width:var(--maxw);margin:0 auto;padding:18px}
+.header{display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{display:flex;gap:12px;align-items:center}
+.mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#3f0000);display:flex;align-items:center;justify-content:center;font-weight:700}
+nav{margin-left:auto;display:flex;gap:8px}
+nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.banner{height:320px;margin-top:18px;border-radius:12px;overflow:hidden;background:#070707;display:flex;align-items:center;justify-content:center}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;margin-top:18px;border:1px solid rgba(255,255,255,0.02)}
+footer{padding:18px;text-align:center;color:var(--muted);margin-top:24px}
+@media(max-width:900px){nav{display:none}.banner{height:180px}}
+</style>
 </head>
 <body>
-
-<header>
-  <h1>Vhar'Kûn – Le Royaume Brisé</h1>
+<header class="header container">
+  <div class="logo"><div class="mark">V</div><div><strong>Les Éclats de Vhar'Kûn</strong><div style="font-size:12px;color:var(--muted)">Dark Fantasy • RP</div></div></div>
+  <nav aria-label="Navigation principale">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="factions.html">Factions</a>
+    <a href="races.html">Races</a>
+    <a href="eclats.html">Éclats</a>
+    <a href="corruption.html">Corruption</a>
+    <a href="rules.html">Règles</a>
+    <a href="events.html">Events</a>
+    <a href="mods.html">Mods</a>
+    <a href="staff.html">Staff</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#histoire">Histoire</a>
-  <a href="#factions">Factions</a>
-  <a href="#eclats">Éclats</a>
-  <a href="#corruption">Corruption</a>
-</nav>
-
 <div class="container">
-
-  <section id="histoire">
-    <h2>Histoire du Royaume</h2>
-    <div class="card">
-      <p>Vhar'Kûn était jadis un royaume prospère. Mais lorsqu’un artefact oublié – le Cœur des Éclats – fut brisé, la terre se fractura, les ombres gagnèrent du pouvoir et les hommes perdirent leur raison.<br><br>
-      Aujourd’hui, le royaume n’est plus qu’une ruine où s’affrontent prétendants, fanatiques et survivants.</p>
+  <div class="banner"><img src="images/banner.png" alt="Bannière Vhar'Kûn" onerror="this.style.display='none'"></div>
+  <div class="card">
+    <h1>Bienvenue à Vhar'Kûn</h1>
+    <p>Serveur RP Conan Exiles — Dark Fantasy / Grimdark. Ce wiki contient le lore complet, les fiches factions, le système d'Éclats, la corruption, le règlement et le guide staff. Utilise le menu pour naviguer.</p>
+    <p><strong>Ouverture :</strong> Phase alpha (informations dans #annonces Discord)</p>
+    <div style="margin-top:12px">
+      <button onclick="window.print()" style="background:#8b0000;color:#fff;padding:8px;border-radius:8px;border:none;cursor:pointer">Générer PDF</button>
     </div>
-  </section>
-
-  <section id="factions">
-    <h2>Factions de Vhar'Kûn</h2>
-    <div class="card">
-      <strong>⚔️ Les Veilleurs du Brasier</strong>
-      <p>Chevaliers humains déterminés à rallumer la Flamme Primordiale.</p><br>
-      <strong>☠️ Le Culte du Cœur Noir</strong>
-      <p>Fanatiques adorant les Éclats corrompus.</p><br>
-      <strong>🏛️ La Ligue des Exilés</strong>
-      <p>Marchands, survivants et mercenaires cherchant à rebâtir le royaume.</p>
-    </div>
-  </section>
-
-  <section id="eclats">
-    <h2>Système des Éclats</h2>
-    <div class="card">
-      <p>Les Éclats sont des fragments du Cœur Primordial. Chaque éclat donne un bonus mais augmente votre exposition à la corruption…</p>
-    </div>
-  </section>
-
-  <section id="corruption">
-    <h2>Corruption Évolutive</h2>
-    <div class="card">
-      <p>Plus un joueur utilise les Éclats, plus la corruption grandit : altérations physiques, hallucinations, mutations, perte de contrôle…</p>
-    </div>
-  </section>
-
+  </div>
 </div>
 
-<footer>
-  Vhar'Kûn Official © 2025 – Serveur RP Conan Exiles
-</footer>
-
+<footer>© Les Éclats de Vhar'Kûn — Site officiel</footer>
 </body>
 </html>
