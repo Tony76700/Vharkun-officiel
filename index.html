@@ -1,407 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Les Éclats de Vhar'Kûn — Site Officiel & Wiki</title>
-<style>
-:root {
-  --bg:#0b0b0c;
-  --panel:#0f1112;
-  --accent:#8b0000;
-  --muted:#9aa3a6;
-  --gold:#c9a15b;
-}
-
-html,body {
-  height:100%;
-  margin:0;
-  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  color:#e6e6e6;
-  background:linear-gradient(180deg,#060607 0%, #0b0b0c 100%);
-}
-
-header {
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:18px;
-  padding:18px 24px;
-  border-bottom:1px solid rgba(255,255,255,.03);
-}
-
-.logo {
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.logo .mark {
-  width:56px;
-  height:56px;
-  background:linear-gradient(180deg,var(--accent),#510000);
-  border-radius:6px;
-  box-shadow:0 6px 24px rgba(139,0,0,.18);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  font-size:24px;
-}
-
-nav {
-  margin-left:auto;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  padding:6px 8px;
-  border-radius:6px;
-  transition: background 0.2s;
-}
-
-nav a:hover {
-  background: rgba(139,0,0,.3);
-}
-
-nav .cta {
-  background: var(--accent);
-  color:white;
-  padding:6px 12px;
-}
-
-.hero {
-  padding:36px 24px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns:1fr;
-  }
-}
-
-.card {
-  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
-  padding:18px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.03);
-}
-
-h1 { margin:6px 0 0; font-size:28px; }
-p.lead { color:var(--muted); margin-top:8px; }
-.toc { padding:12px; background:rgba(255,255,255,.01); border-radius:8px; }
-main { padding:18px 24px; }
-section { margin-bottom:18px; }
-h2 { color:var(--gold); margin:6px 0; }
-.flex { display:flex; gap:12px; flex-wrap:wrap; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
-.box { background:rgba(255,255,255,.02); padding:12px; border-radius:8px; }
-code { background:#0a0a0a; padding:3px 6px; border-radius:4px; color:#f3d4c4; }
-footer { padding:18px 24px; border-top:1px solid rgba(255,255,255,.03); color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px; }
-.muted { color:var(--muted); }
-.pill { display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.02); font-size:13px; }
-.printBtn { background:var(--accent); border:none; padding:10px 14px; border-radius:8px; color:white; cursor:pointer; transition:background 0.2s; }
-.printBtn:hover { background:#5a0000; }
-.banner { height:140px; border-radius:10px; overflow:hidden; background:linear-gradient(90deg,#020202,#170000); display:flex; align-items:center; justify-content:center; }
-.banner h3 { letter-spacing:2px; }
-details { background:rgba(255,255,255,.01); padding:10px; border-radius:8px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vhar'Kûn – Royaume Brisé</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      background: #0f0f0f;
+      color: #e6e6e6;
+      line-height: 1.6;
+    }
+    header {
+      background: url('banner.png') center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 0 15px #000;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      color: #d83a2e;
+    }
+    nav {
+      background: #1a1a1a;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 2px solid #d83a2e;
+    }
+    nav a {
+      color: #d83a2e;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      color: #d83a2e;
+      border-left: 4px solid #d83a2e;
+      padding-left: 10px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 15px;
+      margin: 20px 0;
+      border: 1px solid #333;
+      border-left: 4px solid #d83a2e;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #555;
+      margin-top: 40px;
+      border-top: 1px solid #222;
+    }
+  </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">
-    <div class="mark">V</div>
-    <div>
-      <div style="font-weight:700">Les Éclats de Vhar'Kûn</div>
-      <div style="font-size:12px;color:var(--muted)">Dark Fantasy RP • Conan Exiles</div>
-    </div>
-  </div>
-  <nav>
-    <a href="#lore">Lore</a>
-    <a href="#factions">Factions</a>
-    <a href="#races">Races & Classes</a>
-    <a href="#rules">Règlement</a>
-    <a href="#mods">Mods</a>
-    <a href="#staff">Staff</a>
-    <a class="cta" href="#wiki">Ouvrir le Wiki</a>
-  </nav>
+  <h1>Vhar'Kûn – Le Royaume Brisé</h1>
 </header>
 
-<div class="hero">
-  <div class="card">
-    <div class="banner"><h3>Vhar'Kûn — Le Royaume des Cendres Nocturnes</h3></div>
-    <h1>Un trône brisé. Une terre qui mord. Des Éclats qui appellent.</h1>
-    <p class="lead">Serveur RP Conan Exiles — Dark Fantasy, Grimdark & Politique.</p>
-    <div style="margin-top:12px" class="grid">
-      <div class="box">
-        <strong>Ouverture :</strong>
-        <div class="muted">Phase Alpha — Date à confirmer</div>
-      </div>
-      <div class="box">
-        <strong>Mode :</strong>
-        <div class="muted">RP • PvP scénarisé • Events MJ</div>
-      </div>
-      <div class="box">
-        <strong>Mods :</strong>
-        <div class="muted">Pippi, Emberlight, AoC (opt.), Savage Wilds…</div>
-      </div>
-    </div>
-    <div style="margin-top:14px" class="flex">
-      <button class="printBtn" onclick="window.print()">Générer PDF</button>
-      <button class="printBtn" onclick="downloadJSON()">Exporter Wiki (JSON)</button>
-    </div>
-  </div>
+<nav>
+  <a href="#histoire">Histoire</a>
+  <a href="#factions">Factions</a>
+  <a href="#eclats">Éclats</a>
+  <a href="#corruption">Corruption</a>
+</nav>
 
-  <aside class="card">
-    <div class="toc">
-      <strong>Navigation rapide</strong>
-      <ul style="color:var(--muted);font-size:14px">
-        <li><a href="#lore">Lore & Chronologie</a></li>
-        <li><a href="#factions">Factions</a></li>
-        <li><a href="#races">Races & Classes</a></li>
-        <li><a href="#eclats">Système d'Éclats</a></li>
-        <li><a href="#corruption">Corruption</a></li>
-        <li><a href="#rules">Règlement</a></li>
-        <li><a href="#events">Événement d'ouverture</a></li>
-      </ul>
+<div class="container">
+
+  <section id="histoire">
+    <h2>Histoire du Royaume</h2>
+    <div class="card">
+      <p>Vhar'Kûn était jadis un royaume prospère. Mais lorsqu’un artefact oublié – le Cœur des Éclats – fut brisé, la terre se fractura, les ombres gagnèrent du pouvoir et les hommes perdirent leur raison.<br><br>
+      Aujourd’hui, le royaume n’est plus qu’une ruine où s’affrontent prétendants, fanatiques et survivants.</p>
     </div>
-    <div style="margin-top:12px" class="box">
-      <strong>Contact Staff</strong>
-      <div class="muted">Discord: @LeadAdmin • ticket: #staff-help</div>
+  </section>
+
+  <section id="factions">
+    <h2>Factions de Vhar'Kûn</h2>
+    <div class="card">
+      <strong>⚔️ Les Veilleurs du Brasier</strong>
+      <p>Chevaliers humains déterminés à rallumer la Flamme Primordiale.</p><br>
+      <strong>☠️ Le Culte du Cœur Noir</strong>
+      <p>Fanatiques adorant les Éclats corrompus.</p><br>
+      <strong>🏛️ La Ligue des Exilés</strong>
+      <p>Marchands, survivants et mercenaires cherchant à rebâtir le royaume.</p>
     </div>
-  </aside>
+  </section>
+
+  <section id="eclats">
+    <h2>Système des Éclats</h2>
+    <div class="card">
+      <p>Les Éclats sont des fragments du Cœur Primordial. Chaque éclat donne un bonus mais augmente votre exposition à la corruption…</p>
+    </div>
+  </section>
+
+  <section id="corruption">
+    <h2>Corruption Évolutive</h2>
+    <div class="card">
+      <p>Plus un joueur utilise les Éclats, plus la corruption grandit : altérations physiques, hallucinations, mutations, perte de contrôle…</p>
+    </div>
+  </section>
+
 </div>
 
-<main>
-  <section id="lore" class="card">
-    <h2>Lore & Chronologie</h2>
-    <p><strong>Titre :</strong> Les Éclats de Vhar'Kûn</p>
-    <p><strong>Résumé :</strong> Jadis royaume humain puissant, Vhar'Kûn fut brisé par l'explosion du Cœur d'Obsidienne. Des fragments maudits — les Éclats — corrompent le sang et les terres. Aujourd'hui, factions et cultes s'affrontent pour le trône vide.</p>
-    <details open>
-      <summary style="cursor:pointer">Chronologie synthétique</summary>
-      <ul class="muted">
-        <li>–50 ans : Fondation & Âge d'or</li>
-        <li>–37 ans : Rituel du roi Aemon II → Explosion du Cœur</li>
-        <li>–20 ans : Exode massif</li>
-        <li>–12 ans : Apparition de factions</li>
-        <li>–3 ans : Période d'éveil (porteurs d'Éclats présents)</li>
-        <li>Présent : Le trône est vide. Les Éclats réapparaissent.</li>
-      </ul>
-    </details>
-    <h3>Contexte thématique</h3>
-    <p class="muted">Dark fantasy, moralité grise, horrors visuels et politiques. Les joueurs incarnent des humains et des variations humaines corrompues.</p>
-  </section>
-
-  <section id="factions" class="card">
-    <h2>Factions principales</h2>
-    <div class="grid">
-      <div class="box">
-        <h4>La Légion du Phénix Noir</h4>
-        <div class="muted">Militaires, loyalistes. Restaurer un royaume fort.</div>
-        <p>Ambitions : trône, discipline, reconstruction. Tensions internes sur la sévérité.</p>
-      </div>
-      <div class="box">
-        <h4>Le Cercle de la Cendre</h4>
-        <div class="muted">Occultistes, cultes interdits.</div>
-        <p>Ambitions : rassembler les Éclats, prophéties, rituels dangereux.</p>
-      </div>
-      <div class="box">
-        <h4>Le Peuple des Cendres Errantes</h4>
-        <div class="muted">Nomades, commerçants, diplomates.</div>
-        <p>Ambitions : confédération libre, contrôle du commerce, médiation.</p>
-      </div>
-      <div class="box">
-        <h4>Acteurs secondaires</h4>
-        <div class="muted">Bandes, mercenaires, PNJ influents (Héritier Caché).</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="races" class="card">
-    <h2>Races & Classes</h2>
-    <p class="muted">Choix recommandé : humains + variations humaines corrompues.</p>
-    <div class="grid">
-      <div class="box">
-        <h4>Races (variantes humaines)</h4>
-        <ul>
-          <li><strong>Vhar'Kûniens</strong> — natifs, polyvalents</li>
-          <li><strong>Éthérés</strong> — élancés, yeux luminescents</li>
-          <li><strong>Endurcis</strong> — corpulents, ossature renforcée</li>
-          <li><strong>Âmes-Brisées</strong> — peau pâle, chuchotements</li>
-          <li><strong>Sang-Noirs</strong> — altérés volontairement par le Cercle</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h4>Classes (suggestions RP)</h4>
-        <ul>
-          <li>Guerrier / Champion</li>
-          <li>Pourfendeur des Ombres</li>
-          <li>Occultiste / Rito-mage</li>
-          <li>Pèlerin des Cendres</li>
-          <li>Vagabond / Mercenaire</li>
-          <li>Marcheur du Néant</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="eclats" class="card">
-    <h2>Système d'Éclats</h2>
-    <p class="muted">Fragments du Cœur d'Obsidienne, donnent pouvoirs RP et ajoutent corruption.</p>
-    <div class="grid">
-      <div class="box"><h4>Éclat du Sang</h4><p>Thème: rage & régénération. Effets RP: impulsions, soif de combat.</p></div>
-      <div class="box"><h4>Éclat de Cendre</h4><p>Thème: ombre & illusion. Effets RP: furtivité, visions.</p></div>
-      <div class="box"><h4>Éclat d'Os</h4><p>Thème: robustesse. Effets RP: résistance, formes altérées.</p></div>
-      <div class="box"><h4>Éclat de Souffle</h4><p>Thème: élémentaire mineur. Effets RP: manifestations étranges.</p></div>
-    </div>
-    <details>
-      <summary>Gestion technique</summary>
-      <p class="muted">Implémentation: Pippi, Thespian NPC, Éclats items renommés, validation staff.</p>
-    </details>
-  </section>
-
-  <section id="corruption" class="card">
-    <h2>Système de Corruption Évolutif</h2>
-    <ul>
-      <li><strong>0–10%</strong> — Taches, cauchemars, légères visions</li>
-      <li><strong>10–25%</strong> — Marque visible (yeux, taches), impulsions</li>
-      <li><strong>25–50%</strong> — Déformations, accès à rituels sombres</li>
-      <li><strong>50–100%</strong> — Abysse: quasi-monstrueux, risque d'arc PJ→PNJ</li>
-    </ul>
-  </section>
-
-  <section id="rules" class="card">
-    <h2>Règlement RP / PvP</h2>
-    <h4>RP</h4>
-    <ol class="muted">
-      <li>Respecter le lore et l'ambiance grimdark.</li>
-      <li>Pas de metagame / powerplay.</li>
-      <li>Corruption gérée par staff.</li>
-      <li>Éclats = RP only.</li>
-    </ol>
-    <h4>PvP</h4>
-    <ol class="muted">
-      <li>PvP motivé RP seulement.</li>
-      <li>Raids encadrés.</li>
-      <li>Interdiction de wipe complet sans roleplay & accord staff.</li>
-      <li>Prises d'otages limitées et exigeant RP.</li>
-    </ol>
-  </section>
-
-  <section id="mods" class="card">
-    <h2>Liste de Mods Optimisée</h2>
-    <ul class="muted">
-      <li>Pippi</li>
-      <li>Emberlight</li>
-      <li>RA: Character Customization</li>
-      <li>Immersive Armor</li>
-      <li>Age of Calamitous (optionnel)</li>
-      <li>Savage Wilds / Exiled Lands improved</li>
-      <li>Hosav's UI</li>
-      <li>Better Thralls / Pickup+</li>
-      <li>Grim Fashion / Fashionist</li>
-    </ul>
-  </section>
-
-  <section id="staff" class="card">
-    <h2>Guide Staff</h2>
-    <p class="muted">Rôles : Lorekeeper, Event Master, Modérateur, Architecte.</p>
-    <details>
-      <summary>Procédures clés</summary>
-      <ul class="muted">
-        <li>Ticket pour conflits</li>
-        <li>Validation des paliers de corruption</li>
-        <li>Organisation d'événements</li>
-        <li>Gestion des Éclats</li>
-      </ul>
-    </details>
-  </section>
-
-  <section id="economy" class="card">
-    <h2>Système économique & territorial</h2>
-    <p class="muted">Ressources : Fer Noir, Cendres Vives, Or Brisé. Contrôle max 3 territoires par faction.</p>
-    <details>
-      <summary>Taxes & commerce</summary>
-      <ul class="muted">
-        <li>Taxes paramétrables par faction</li>
-        <li>Postes de péage</li>
-        <li>Missions économiques</li>
-      </ul>
-    </details>
-  </section>
-
-  <section id="events" class="card">
-    <h2>Événement d'ouverture — "Le Retour des Éclats"</h2>
-    <ol class="muted">
-      <li>Phase 1 — Incursion : PNJ colosse corrompu</li>
-      <li>Phase 2 — Éclats : chaque joueur reçoit un éclat mineur</li>
-      <li>Phase 3 — Révélations : factions déclarent ambitions</li>
-      <li>Phase 4 — Tensions : premières escarmouches PvP</li>
-    </ol>
-  </section>
-
-  <section id="politics" class="card">
-    <h2>Plan politique des prétendants</h2>
-    <div class="grid">
-      <div class="box"><strong>Dame Eryndale</strong> — Légion</div>
-      <div class="box"><strong>Grand Mage Serhûn</strong> — Cercle</div>
-      <div class="box"><strong>Conseil des Errants</strong> — Peuple Errant</div>
-      <div class="box"><strong>L'Héritier Caché</strong> — PNJ potentiel d'event</div>
-    </div>
-  </section>
-
-  <section id="wiki" class="card">
-    <h2>Wiki — Pages clés</h2>
-    <p class="muted">Toutes les pages : Lore détaillé, Fiches de factions, Mod list, Règles, Guide staff, Biographies NPC, Events.</p>
-    <details>
-      <summary>Exporter / télécharger</summary>
-      <p class="muted">Cliquez sur "Exporter Wiki (JSON)" en haut pour télécharger le contenu.</p>
-    </details>
-  </section>
-</main>
-
 <footer>
-  <div>© Les Éclats de Vhar'Kûn — Pack de contenu généré</div>
-  <div class="muted">Besoin d'aide? Guide staff complet, PDF, assets graphiques</div>
+  Vhar'Kûn Official © 2025 – Serveur RP Conan Exiles
 </footer>
 
-<script>
-const wiki = {
-  meta:{title:"Les Éclats de Vhar'Kûn",generatedBy:"assistant"},
-  pages:{
-    lore:document.querySelector('#lore')?.innerText||"",
-    factions:document.querySelector('#factions')?.innerText||"",
-    races:document.querySelector('#races')?.innerText||"",
-    eclats:document.querySelector('#eclats')?.innerText||"",
-    corruption:document.querySelector('#corruption')?.innerText||"",
-    rules:document.querySelector('#rules')?.innerText||"",
-    mods:document.querySelector('#mods')?.innerText||"",
-    staff:document.querySelector('#staff')?.innerText||"",
-    economy:document.querySelector('#economy')?.innerText||"",
-    events:document.querySelector('#events')?.innerText||"",
-    politics:document.querySelector('#politics')?.innerText||""
-  }
-};
-
-function downloadJSON(){
-  const blob = new Blob([JSON.stringify(wiki,null,2)],{type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'vhar_kun_wiki_export.json';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
-</script>
 </body>
 </html>
