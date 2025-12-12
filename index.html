@@ -1,261 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Lore — Les Éclats de Vhar'Kûn</title>
-<link rel="icon" href="images/favicon.png"/>
-<style>
-:root{--bg:#050506;--panel:#0f1112;--muted:#98a0a2;--text:#e9e6e3;--accent:#7f0000;--gold:#b98f4d;--maxw:1200px}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:linear-gradient(180deg,#040404,#0b0b0c);color:var(--text);font-family:Inter,system-ui, -apple-system, "Segoe UI", Roboto}
-.header{position:fixed;top:0;left:0;right:0;height:72px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.35));display:flex;align-items:center;padding:10px 18px;z-index:100;border-bottom:1px solid rgba(255,255,255,0.02)}
-.container{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;width:100%}
-.brand{display:flex;align-items:center;gap:12px}
-.brand .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#2f0000);display:flex;align-items:center;justify-content:center;font-weight:800}
-.nav{margin-left:auto;display:flex;gap:6px;align-items:center}
-a.btn{color:var(--text);padding:8px 12px;border-radius:8px;text-decoration:none;display:inline-block;font-size:14px}
-a.btn:hover{background:rgba(255,255,255,0.02)}
-.menu-item{position:relative}
-.dropdown{position:absolute;top:42px;left:0;background:linear-gradient(180deg,#0b0b0c,#101010);border-radius:8px;padding:8px;min-width:220px;box-shadow:0 12px 30px rgba(0,0,0,0.6);display:none}
-.menu-item:hover .dropdown{display:block}
-.dropdown a{display:block;padding:8px;border-radius:6px;color:var(--muted);text-decoration:none}
-.dropdown a:hover{color:var(--text);background:rgba(255,255,255,0.03)}
-.hamburger{display:none;cursor:pointer;margin-left:12px}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:linear-gradient(180deg,#070707,#0b0b0b);padding:12px;z-index:90;border-top:1px solid rgba(255,255,255,0.02)}
-.mobile-menu a{display:block;padding:10px;border-radius:8px;color:var(--muted);text-decoration:none;margin-bottom:6px}
-.mobile-menu a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vharkun - Serveur RP</title>
+    <link rel="stylesheet" href="style.css">
 
-.main{max-width:var(--maxw);margin:110px auto;padding:18px}
-.article{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-h1{color:var(--gold)}
-.muted{color:var(--muted)}
-p{margin:8px 0;line-height:1.45}
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-/* responsive */
-@media(max-width:1000px){
-  .nav{display:none}
-  .hamburger{display:block}
-}
-</style>
+    <style>
+        /* ====== RESET ====== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d0d0d;
+            color: #e4e4e4;
+            line-height: 1.7;
+        }
+
+        /* ====== HEADER ====== */
+        header {
+            background: #111;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #cfa34a;
+        }
+
+        /* ====== NAVIGATION ====== */
+        nav {
+            position: relative;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #cfa34a;
+            cursor: pointer;
+            display: none;
+        }
+
+        ul.menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        ul.menu li a {
+            color: #e4e4e4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        ul.menu li a:hover {
+            color: #cfa34a;
+        }
+
+        /* ====== DROPDOWN ====== */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #1a1a1a;
+            border: 1px solid #444;
+            padding: 10px;
+            min-width: 180px;
+            top: 30px;
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 8px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* ====== MOBILE ====== */
+        @media(max-width: 900px) {
+            .menu-btn { display: block; }
+            ul.menu {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                border-top: 1px solid #333;
+                position: absolute;
+                right: 0;
+                top: 60px;
+                width: 220px;
+                padding: 15px;
+            }
+            ul.menu.show { display: flex; }
+        }
+
+        /* ====== HERO BANNIÈRE ====== */
+        .hero {
+            background: url("banner.png") center/cover no-repeat;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 0 10px #000;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            color: #cfa34a;
+            background: rgba(0,0,0,0.55);
+            padding: 20px 40px;
+            border: 1px solid #444;
+        }
+
+        /* ====== SECTION ====== */
+        .section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            color: #cfa34a;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+    </style>
 </head>
+
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="brand">
-        <div class="mark">V</div>
-        <div>
-          <div style="font-weight:700">Les Éclats de Vhar'Kûn</div>
-          <div style="font-size:12px;color:var(--muted)">Dark Fantasy — RP</div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-content">
+            <div class="logo">VHARKUN</div>
+
+            <button class="menu-btn" onclick="document.querySelector('.menu').classList.toggle('show')">
+                ☰
+            </button>
+
+            <nav>
+                <ul class="menu">
+
+                    <li><a href="index.html">Accueil</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Univers ▾</a>
+                        <div class="dropdown-content">
+                            <a href="lore.html">Lore</a>
+                            <a href="chronologie.html">Chronologie</a>
+                            <a href="factions.html">Factions</a>
+                            <a href="classes.html">Classes</a>
+                            <a href="bestiaire.html">Bestiaire</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Systèmes ▾</a>
+                        <div class="dropdown-content">
+                            <a href="regles.html">Règlement</a>
+                            <a href="systeme.html">Systèmes généraux</a>
+                            <a href="eclats.html">Système des Éclats</a>
+                            <a href="corruption.html">Corruption</a>
+                            <a href="economy.html">Économie</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Politique ▾</a>
+                        <div class="dropdown-content">
+                            <a href="politique.html">Organisation politique</a>
+                            <a href="carte.html">Carte & territoires</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Wiki ▾</a>
+                        <div class="dropdown-content">
+                            <a href="wiki.html">Wiki complet</a>
+                            <a href="mods.html">Liste des mods</a>
+                            <a href="faq.html">FAQ</a>
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#">Staff ▾</a>
+                        <div class="dropdown-content">
+                            <a href="staff.html">Équipe</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <div class="menu-item"><a class="btn" href="index.html">Accueil</a></div>
-
-        <div class="menu-item">
-          <a class="btn" href="lore.html">Univers ▾</a>
-          <div class="dropdown" aria-hidden="true">
-            <a href="lore.html">Lore</a>
-            <a href="chronologie.html">Chronologie</a>
-            <a href="factions.html">Factions</a>
-            <a href="classes.html">Classes & Profils</a>
-            <a href="bestiaire.html">Bestiaire</a>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <a class="btn" href="systeme.html">Règles & Systèmes ▾</a>
-          <div class="dropdown" aria-hidden="true">
-            <a href="reglement.html">Règlement</a>
-            <a href="systeme.html">Système</a>
-            <a href="eclats.html">Éclats</a>
-            <a href="corruption.html">Corruption</a>
-            <a href="economie.html">Économie</a>
-          </div>
-        </div>
-
-        <div class="menu-item"><a class="btn" href="politique.html">Politique</a></div>
-        <div class="menu-item"><a class="btn" href="carte.html">Carte</a></div>
-
-        <div class="menu-item">
-          <a class="btn" href="wiki.html">Wiki ▾</a>
-          <div class="dropdown" aria-hidden="true">
-            <a href="wiki.html">Index</a>
-            <a href="events.html">Events</a>
-            <a href="mods.html">Mods</a>
-            <a href="faq.html">FAQ</a>
-          </div>
-        </div>
-
-        <div class="menu-item"><a class="btn" href="staff.html">Staff</a></div>
-        <div class="menu-item"><a class="btn" href="contact.html">Contact</a></div>
-      </nav>
-
-      <div class="hamburger" onclick="toggleMobile()">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e9e6e3" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </div>
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+        <h1>Les Éclats de Vharkun</h1>
     </div>
 
-    <div id="mobileMenu" class="mobile-menu" style="display:none">
-      <a href="index.html">Accueil</a>
-      <a href="lore.html">Lore</a>
-      <a href="chronologie.html">Chronologie</a>
-      <a href="factions.html">Factions</a>
-      <a href="classes.html">Classes</a>
-      <a href="bestiaire.html">Bestiaire</a>
-      <a href="reglement.html">Règlement</a>
-      <a href="systeme.html">Système</a>
-      <a href="eclats.html">Éclats</a>
-      <a href="corruption.html">Corruption</a>
-      <a href="economie.html">Économie</a>
-      <a href="politique.html">Politique</a>
-      <a href="carte.html">Carte</a>
-      <a href="wiki.html">Wiki</a>
-      <a href="events.html">Events</a>
-      <a href="mods.html">Mods</a>
-      <a href="faq.html">FAQ</a>
-      <a href="staff.html">Staff</a>
-      <a href="contact.html">Contact</a>
+    <!-- ===== PAGE CONTENT ===== -->
+    <div class="section">
+        <h2>Bienvenue sur le serveur RP de Vharkun</h2>
+        <p>
+            Entrez dans un univers dark fantasy brutal, ravagé par la magie ancienne des Éclats et la corruption rampante qui consume le royaume.
+        </p>
+        <p>
+            Explorez le lore, choisissez votre faction, évoluez dans un monde dangereux et laissez votre histoire marquer l’ère de Vharkun.
+        </p>
     </div>
-  </header>
 
-  <main class="main">
-    <article class="article">
-      <h1>Lore : Vhar'Kûn — Ombres et Flammes</h1>
+    <!-- ===== FOOTER ===== -->
+    <footer>© 2025 Vharkun RP — Tous droits réservés.</footer>
 
-      <!-- LORE LONG CELEBRE (120 énoncés) -->
-      <!-- (Copié intégralement depuis ton texte validé — j'ai conservé chaque ligne) -->
-      <p>1. Avant la première ruine, Vhar'Kûn s'appelait Vhar'Rual, fertile et tissé de routes solides et de lois anciennes.</p>
-      <p>2. Les maisons nobles se disputaient certes la prééminence, mais la paix du royaume tenait encore à un fil brillant : le Sceptre d'Obsidienne.</p>
-      <p>3. Le Sceptre, forgé avant les mémoires, unifiait les Éclats — pierres noires issues d’un ciel brisé, conservées par la cour.</p>
-      <p>4. À travers deux cents ans, la dynastie Valdyr gouverna avec la poigne d’un artisan et la sagesse d’un bibliothécaire.</p>
-      <p>5. Puis le roi Aldras IV tomba malade, et dans sa folie il chercha la prolongation de son règne par un rite interdit.</p>
-      <p>6. Dans la nuit où il invoqua, le ciel craquela ; la pierre éclata ; la ville sombra dans une lueur rouge comme la chair brûlée.</p>
-      <p>7. La rupture fut un cri qui traversa les provinces et réveilla ce qui dormait sous la terre.</p>
-      <p>8. Des Éclats éclorent désormais à la surface — taches brillantes incrustées dans la roche, suintant d'une froide essence.</p>
-      <p>9. Ceux qui vinrent les prendre furent touchés par des visions, une faim et une soif qui n'étaient pas de ce monde.</p>
-      <p>10. Les premiers possesseurs d'Éclats gagnaient force, éclat et clairvoyance — et un étrange prix en retour.</p>
-      <p>11. D'abord des villages, puis des cités entières se firent le théâtre d'effroi : bêtes tordues, récoltes viciées, rêves de sang.</p>
-      <p>12. La légende orale retint comme vérité que le Sceptre n'avait pas seulement uni, mais retenu quelque chose.</p>
-      <p>13. Lorsque le Sceptre craqua, la chose exhala et le souvenir d'un autre monde s'insinua dans les hommes.</p>
-      <p>14. Les nobles eurent peur, les prêtres eurent faim, et les brigands eurent des sourires antiques sur leurs lèvres.</p>
-      <p>15. Dans les années qui suivirent, la Purge Écarlate éclata — guerres de succession, traités brisés, familles écumées.</p>
-      <p>16. De petites armées prirent la route pour piller, pour écarter la famine, pour voir si l'avenir pouvait devenir leur esclave.</p>
-      <p>17. La terre de Vhar'Kûn se coucha et se leva de nouveau — elle apprit à mordre et à cracher des ténèbres.</p>
-      <p>18. Les érudits appelèrent la nouvelle énergie la Corruption, et les prêtres l’appelèrent punition.</p>
-      <p>19. Entre les ruines, des cultes se formèrent — pas de croyances douces, mais de rituels tranchants comme des pierres.</p>
-      <p>20. Les Éclats devinrent monnaie, talisman, fléau et clé, selon qui les tenait et pourquoi ils les tenait.</p>
-      <p>21. Les quatre puissances naquirent de cendres et d’ambitions : loyalistes, marchands, guerriers, et une foi noire et structurée.</p>
-      <p>22. Le peuple, quant à lui, apprit la loi du feu : survivre est un art plus proche de l'empoisonnement que de la vertu.</p>
-      <p>23. Les enfants naquirent avec des tâches sombres ou des yeux trop clairs ; certains furent bénis, d'autres marqués.</p>
-      <p>24. Les maisons se barricadèrent, les routes changèrent, et les étrangers devinrent aussi dangereux que la nuit.</p>
-      <p>25. Et au centre de tout, la capitale — la Gueule — restait un gouffre où la pierre gémissait et où naquirent les bêtes de cendre.</p>
-      <p>26. Les archives furent pillées, les bibliothèques incendiées, mais des pages résistèrent, colportant ainsi l'histoire vraie.</p>
-      <p>27. Parmi les survivants, certains se jurèrent de rendre la couronne à ses détenteurs, d'autres jurèrent d'en faire un outil.</p>
-      <p>28. Le temps forma de nouveaux rites : comment purifier, comment garder, comment offrir.</p>
-      <p>29. Les Légionnaires du Phénix se organisèrent pour tenir les forteresses et repasser l'acier chaque matin en mémoire des morts.</p>
-      <p>30. Les guildes du Fer, elles, négocièrent routes et mercenaires, faisant de l'or la priorité avant l'honneur.</p>
-      <p>31. Les Inquisiteurs dressèrent des bûchers, et les Ombres — autrement dites la Ligue des Cendres — apprirent l'art du secret.</p>
-      <p>32. Le royaume n'est pas un champ de bataille constant ; il est une mosaïque de traités fragiles, d'alliances changeantes, d'opportunistes qui attendent la mauvaise nuit.</p>
-      <p>33. Les Éclats, quant à eux, ne sont pas tous identiques : certains donnent force physique, d'autres donnent visions, d'autres des voix.</p>
-      <p>34. Les voix peuvent être des partenaires ou des bourreaux ; elles murmurent promesses et menaces indistinctes.</p>
-      <p>35. Un Éclat mal compris peut mener un homme à se trancher la paume pour en extraire un secret, ou à s'agenouiller pour le prier.</p>
-      <p>36. Les forgerons apprirent à incruster des Éclats dans les lames — mais la lame devint alors imprévisible.</p>
-      <p>37. Les guérisseurs apprirent que la chair recousue avec une poussière d'Éclat cicatrise vite… mais rit encore quand vous dormez.</p>
-      <p>38. Les enfants des zones corrompues vieillissent vite et parlent en proverbes que personne n'avait appris.</p>
-      <p>39. L'union des fragments est une idée dangereuse : plus d'un furent consumés en cherchant à forger le Sceptre à nouveau.</p>
-      <p>40. Le Sceptre reste un mythe, une vérité probable et une folie possible ; certains le cherchent, d'autres souhaitent le détruire.</p>
-      <p>41. Le roi disparu est dit avoir disparu dans l'éclat d'une lumière ; certains affirment qu'il vit encore, relié aux pierres.</p>
-      <p>42. Les bardes racontent que la couronne brisée appelle des voix dans le vent ; les loups répondent, et parfois, la pluie saigne.</p>
-      <p>43. Le climat a changé : brumes acides, orages silencieux, et nuits où la lune rougit sans s’embraser.</p>
-      <p>44. À l'aube, on trouve parfois des silhouettes qui marchent comme des hommes mais qui gravissent les murs comme des ombres.</p>
-      <p>45. Les marchés vendent des potions volées, des reliques, des cartes menant à des cavernes d'Éclats et des contrats d'assassinat.</p>
-      <p>46. Des guildes de mercenaires s'installèrent pour protéger ces convois, et devinrent plus puissantes que certaines baronnies.</p>
-      <p>47. Les prêtres officiels perdirent du pouvoir, remplacés par des prophètes locaux qui promettaient saluts et catastrophes.</p>
-      <p>48. Dans ces temps, la patience fut la vertu la plus rare ; l'audace et la cruauté rapportèrent davantage de pain.</p>
-      <p>49. Quelques cités tentèrent des expériences pour neutraliser les Éclats : bains de cendre, chants prolongés, sacrifices rituels.</p>
-      <p>50. Certains de ces essais réussirent en apparence : les plantes reverdissaient, la bête se calmait — et le meneur devenait troué par l'appel d'une autre voix.</p>
-      <p>51. La corruption agit lentement, en filigrane ; elle teinte les décisions, envenime les mariages et pousse les alliances à trahir.</p>
-      <p>52. Les espions firent leur profit en volant des cartes de gisements et en vendant des secrets au plus offrant.</p>
-      <p>53. Au fil des ans, des écoles obscures prirent naissance : forgeron, herboriste, prêtre, et… ceux qui façonnent l'Éclat.</p>
-      <p>54. Ces écoles enseignaient que la pierre est un miroir ; que regarder dedans révèle tout, mais aussi efface une part de soi.</p>
-      <p>55. Un petit groupe d'érudits — appelés les Veilleurs — dit conserver la méthode pour évaluer les effets de l'Éclat.</p>
-      <p>56. Les Veilleurs cherchent l'équilibre : utiliser l'Éclat sans se perdre ; mais beaucoup d'entre eux ont déjà perdu peu à peu leur nom.</p>
-      <p>57. Ici, la loyauté est une monnaie changeante ; un seigneur peut devenir traître en une lune et revenir en héros après une bataille.</p>
-      <p>58. Les routes voguent entre la misère et l'opportunité ; celles qui rapportent le plus attirent les pires mercenaires.</p>
-      <p>59. Les enfants des rues apprennent vite : survivre nécessite un mensonge, un couteau et parfois un Éclat en poche.</p>
-      <p>60. Certains hommes prirent le choix fou de brûler leurs propres Éclats, croyant que le feu intime purifie mieux que la pierre.</p>
-      <p>61. D'autres cherchèrent au contraire à creuser toujours plus profond, persuadés que la source des Éclats détenait la solution.</p>
-      <p>62. Les faiseurs d'armes tentèrent des expérimentations secrètes : lames qui sifflent, armures qui murmurent, casques qui voient le passé.</p>
-      <p>63. La magie devint un vocable dangereux : on la nomma, on la chuchota, on la baptisa «science interdite» dans les salons nobles.</p>
-      <p>64. Les mendiants prirent l'habitude de scander le nom des héros morts, parce qu'une mémoire entretenue pouvait être louée un jour.</p>
-      <p>65. Des caravanes d’exilés traversent encore la contrée, portant des reliques, des confessions et de la poussière d'Éclat volée.</p>
-      <p>66. Les oiseaux évitent certaines zones ; l'air y semble froid même en été et porte une odeur d'acier brûlé.</p>
-      <p>67. Des prêtres de fortune proposent des purifications au prix d'un cheveu et d'une faveur à venir.</p>
-      <p>68. Mais parfois, dans la terre la plus noire, on trouve des graines qui éclatent en fleurs d'or — miracles qui forcent le doute plutôt que la foi.</p>
-      <p>69. Les veillées nocturnes révèlent des chansons étranges : refrains aux mots cassés qui font frissonner les anciens.</p>
-      <p>70. Plusieurs aventuriers finirent par vendre leur âme pour une heure de puissance, et la puissance s'enfuit en riant.</p>
-      <p>71. Un trafic d'objets maudits s'organisa — amulettes, bagues, petites statues qui saignent la nuit.</p>
-      <p>72. Les forgerons refusent souvent certains minerais ; ils disent que la pierre «chuchote» et que l'enclume ne doit pas l'entendre.</p>
-      <p>73. Les prêtres imposent une taxe d'âme : payer pour une bénédiction, payer pour oublier, payer pour ne pas entendre.</p>
-      <p>74. Les enfants qui regardent trop les Éclats deviennent souvent silencieux ; le silence est une marque pour ceux qui ont vu trop tôt.</p>
-      <p>75. Les routes de l'est gardent des légendes sur villes englouties et sur des hommes qui ouvrirent des portails pour fuir la nuit.</p>
-      <p>76. Les chevaux refusent parfois de traverser certains ponts, comme s’ils sentaient un fil coupé sous la pierre.</p>
-      <p>77. Les aubergistes racontent que l'odeur de cendre attire les créatures quand le ciel devient rouge ; les rues deviennent alors carnages improvisés.</p>
-      <p>78. Les rituels anciens requièrent du sang et une chanson à mi-voix ; alentour, la pierre brille comme de la graisse cuite.</p>
-      <p>79. Certains villages s'organisent autour de cercles protecteurs : pierres gravées, braises, et chants de vieux.</p>
-      <p>80. Mais la protection se paye en présents — or, servitude, recrues pour la milice locale.</p>
-      <p>81. Les exécuteurs parcourent la contrée : juges ambulants, pillards de l'âme, accusateurs publics qui coupent la parole plus souvent que la main.</p>
-      <p>82. Dans ces temps sombres, la notion d'héroïsme se confond avec la survie ; on applaudit souvent l'homme qui rapporte du grain plutôt que celui qui remporte la bataille.</p>
-      <p>83. Vhar'Kûn est une carte de responsabilités et de dettes ; chaque acte a un prix que le temps exposera.</p>
-      <p>84. Les havres sûrs sont rares ; ceux qui les tiennent tiennent souvent des secrets qui valent mieux que des coffres pleins.</p>
-      <p>85. Les sagas prononcent le nom d'un futur : «Quand l'Éclat reviendra entier, un homme ou une femme lèvera la pierre.»</p>
-      <p>86. Certains disent que la pierre cherche un hôte, non pas pour être portée, mais pour être ressentie de l'intérieur.</p>
-      <p>87. D'autres affirment qu'un trône existe encore, caché, et que le trône se nourrit de promesses non tenues.</p>
-      <p>88. Il y a dans Vhar'Kûn une toile de mensonges et de vérités ; savoir quelle est la vérité demande davantage que la bravoure : cela requiert une mémoire sans nostalgie.</p>
-      <p>89. L'ombre des églises anciennes s'étend sur des marchés sans dieux ; la foi a muté, comme le reste.</p>
-      <p>90. Les chantres du Nord apportent des tours de chant capables d'aveugler, et les mercenaires apprennent à aimer la nuit davantage que le jour.</p>
-      <p>91. Les pauvres forment des villes basses, où la loi est un mythe et la survie, une matière première.</p>
-      <p>92. Les riches gardent leurs murs, mais la richesse n'achète pas le sommeil : elle n'achète que la mesure du sommeil.</p>
-      <p>93. Les lettres échangées entre seigneurs sont découpées en promesses et en pièges ; la plume est devenue assez tranchante pour couper des liens.</p>
-      <p>94. Les enfants grandissent avec des cartes froissées leur montrant où ne pas aller ; l'interdit devient leur carte personnelle.</p>
-      <p>95. Mais au centre de ce désastre, il subsiste de la beauté : une forge qui chante, une lame parfaitement équilibrée, un fils qui sourit malgré tout.</p>
-      <p>96. Les chansons racontent des petits actes : une main tendue, un pain partagé, une nuit gardée par un étranger devenu allié.</p>
-      <p>97. Ainsi se tissent des réseaux de confiance ; ils sont fragiles mais réels, et plus dangereux pour les puissants que n'importe quel Éclat.</p>
-      <p>98. Pour qui sait entendre, Vhar'Kûn murmure : «Il y aura un choix.»</p>
-      <p>99. Le choix demande du courage, de la ruse, et une conscience malléable ; il demande aussi des alliances qui ne tiennent pas au sang.</p>
-      <p>100. Certains pensent que le salut sera administratif : loi, institutions, rente ; d'autres, que la seule issue est la guerre finale.</p>
-      <p>101. Dans la boue, des enfants ramassent des gemmes et apprennent à les vendre ; dans les cours des palais, des conseils décident de la façon de prononcer la mort.</p>
-      <p>102. Il y aura des trahisons, des pactes, des mariages arrangés; il y aura des héros, et surtout des gens qui essaient de vivre.</p>
-      <p>103. La corruption ne tue pas tous en un instant ; elle cisèle, sculpte et transforme.</p>
-      <p>104. Certains gardent encore l'ancienne foi, d'autres danseront pour des lanternes noires jusqu'à l'aube.</p>
-      <p>105. À la fin, quand les voix se tairont et que la poussière retombera, il restera ce que l'on aura choisi de protéger.</p>
-      <p>106. Si le Sceptre doit revenir, il faudra payer ; et les prix ici sont rarement pesés en or.</p>
-      <p>107. En attendant, Vhar'Kûn est un théâtre : petites voix, grands cris, et hommes qui cherchent à savoir s'ils veulent un roi ou seulement une survie meilleure.</p>
-      <p>108. Entre les pierres et les vents, la destinée du royaume est écrite à l'encre des actes, non des promesses.</p>
-      <p>109. Et chaque nuit, quand la lune rougit, quelqu'un quelque part entend l'appel d'un Éclat et se tourne, la main tremblante vers un avenir incertain.</p>
-      <p>110. Ainsi va Vhar'Kûn : beau, cruel, parlant en fragments, et toujours vivant d'une volonté qui refuse de mourir.</p>
-      <p>111. Viens donc, exilé : choisis un nom, garde-le, et souviens-toi que l'histoire n'est pas écrite par les vivants seulement, mais aussi par les pierres qui sifflent.</p>
-      <p>112. Car au-delà des villes en ruines, dans des cavernes éclatées, quelque chose attend l'audace ou la folie.</p>
-      <p>113. Et ceux qui prennent la pierre doivent savoir que l'âme qui s'y engouffre peut revenir différente — ou ne revenir jamais.</p>
-      <p>114. Prends garde à ce que tu souhaites ; les Éclats exaucent en seurrant des deals que la mémoire oubliera.</p>
-      <p>115. Tout peut changer à l'instant où un homme choisit d'élever une bannière, ou d'enterrer une lettre, ou d'épargner une vie.</p>
-      <p>116. Vhar'Kûn ne pardonne pas, mais il récompense ceux qui apprennent à donner en retour.</p>
-      <p>117. Si tu restes, sache que l'histoire que tu écris ici sera racontée à voix basse dans des tavernes, et plus haut dans des salles glacées.</p>
-      <p>118. Les Éclats n'aimeront pas toujours ceux qui les portent ; souvent ils aiment la solitude et l'égoïsme.</p>
-      <p>119. Mais l'humanité, malgré tout, persiste ; et dans la persistance, il y a toujours une chance.</p>
-      <p>120. Maintenant, prends une torche, marche vers la brume, et décide qui tu veux être. Le royaume attend.</p>
-    </article>
-  </main>
-
-  <footer style="text-align:center;padding:18px;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)">© Les Éclats de Vhar'Kûn — Dark Fantasy RP</footer>
-
-<script>
-function toggleMobile(){
-  const el = document.getElementById('mobileMenu');
-  el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-}
-</script>
 </body>
 </html>
