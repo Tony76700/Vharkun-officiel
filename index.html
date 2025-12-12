@@ -1,84 +1,80 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Les Éclats de Vhar'Kûn — Accueil</title>
-<link rel="icon" href="images/favicon.png" />
+<link rel="icon" href="images/favicon.png"/>
 <style>
-:root{
-  --bg:#050506; --panel:#0f1112; --muted:#98a0a2; --text:#e9e6e3;
-  --accent:#7f0000; --accent-2:#2f0000; --gold:#b98f4d;
-  --glass:rgba(255,255,255,0.03); --radius:12px; --maxw:1200px;
-}
+:root{--bg:#050506;--muted:#98a0a2;--text:#e9e6e3;--gold:#b98f4d;--accent:#7f0000;--maxw:1200px}
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#040404,#0b0b0c);color:var(--text)}
-a{color:var(--gold)}
-.header{position:fixed;top:0;left:0;right:0;height:72px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));display:flex;align-items:center;padding:12px 20px;z-index:50;border-bottom:1px solid rgba(255,255,255,0.02)}
-.container{max-width:var(--maxw);margin:0 auto;width:100%}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#040404,#0b0b0c);color:var(--text);font-family:Inter,system-ui, -apple-system, "Segoe UI", Roboto}
+.header{position:fixed;inset:0 0 auto 0;height:72px;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.35));display:flex;align-items:center;padding:12px 20px;z-index:50;border-bottom:1px solid rgba(255,255,255,0.02)}
+.container{max-width:var(--maxw);margin:92px auto;padding:18px}
 .logo{display:flex;gap:14px;align-items:center}
-.mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(180deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 8px 30px rgba(127,0,0,0.18)}
+.mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#2f0000);display:flex;align-items:center;justify-content:center;font-weight:800}
 nav{margin-left:auto;display:flex;gap:10px;align-items:center}
-nav a{padding:10px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14px}
+nav a{padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14px}
 nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
-.hero{margin-top:92px}
-.banner{height:360px;border-radius:12px;overflow:hidden;background:#060606;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center}
+.hero{margin-top:18px}
+.banner{height:340px;border-radius:12px;overflow:hidden;background:#070707;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center}
 .banner img{width:100%;height:100%;object-fit:cover;display:block}
-.grid{display:grid;grid-template-columns:1fr 380px;gap:20px;max-width:var(--maxw);margin:20px auto;padding:0 18px}
+.grid{display:grid;grid-template-columns:1fr 340px;gap:20px;max-width:var(--maxw);margin:20px auto;padding:0 18px}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
 .aside .card{position:sticky;top:92px}
 h1{color:var(--gold);margin:0 0 8px 0}
 .muted{color:var(--muted)}
 .footer{padding:18px;text-align:center;color:var(--muted);margin-top:30px;border-top:1px solid rgba(255,255,255,0.02)}
-@media(max-width:1000px){.grid{grid-template-columns:1fr}.aside .card{position:static;top:auto}}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}.aside .card{position:static;top:auto}.nav-hide{display:none}}
 </style>
 </head>
 <body>
   <header class="header">
-    <div class="container" style="display:flex;align-items:center">
-      <div class="logo"><div class="mark">V</div><div><div style="font-weight:700">Les Éclats de Vhar'Kûn</div><div style="font-size:12px;color:var(--muted)">Dark Fantasy • RP • Conan Exiles</div></div></div>
-      <nav aria-label="navigation principale">
+    <div class="container" style="display:flex;align-items:center;width:100%">
+      <div class="logo"><div class="mark">V</div><div><div style="font-weight:700">Les Éclats de Vhar'Kûn</div><div style="font-size:12px;color:var(--muted)">Dark Fantasy • RP</div></div></div>
+      <nav aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="lore.html">Lore</a>
+        <a href="chronologie.html">Chronologie</a>
         <a href="factions.html">Factions</a>
-        <a href="classes.html">Profils</a>
+        <a href="systeme.html">Système</a>
         <a href="eclats.html">Éclats</a>
         <a href="corruption.html">Corruption</a>
-        <a href="rules.html">Règles</a>
-        <a href="economy.html">Économie</a>
-        <a href="politics.html">Politique</a>
+        <a href="reglement.html">Règlement</a>
+        <a href="economie.html">Économie</a>
+        <a href="politique.html">Politique</a>
         <a href="bestiaire.html">Bestiaire</a>
-        <a href="events.html">Events</a>
+        <a href="classes.html">Classes</a>
+        <a href="carte.html">Carte</a>
+        <a href="wiki.html">Wiki</a>
         <a href="staff.html">Staff</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="hero container">
+  <main class="container">
     <div class="banner card"><img src="images/banner.png" alt="Bannière Vhar'Kûn" onerror="this.style.display='none'"></div>
 
     <div class="grid">
       <section class="card">
         <h1>Bienvenue à Vhar'Kûn</h1>
-        <p class="muted">Un royaume brisé. Une terre rongée par des fragments d’un ancien pouvoir — les Éclats. Ici, survie, politique et corruption s'entremêlent. Choisis ton camp, incarne ton personnage, et façonne l'avenir… ou oublie-toi dans la brume.</p>
+        <p class="muted">Un royaume brisé, rongé par les Éclats. Ici, la politique se mêle à la survie et la corruption murmurante. Ce wiki contient tout ce dont vous avez besoin pour entrer en RP — histoires, factions, systèmes et règles.</p>
 
-        <h2 style="margin-top:16px">Entrées rapides</h2>
+        <h2 style="margin-top:16px">Commencer</h2>
         <ul class="muted">
-          <li><strong>Lore</strong> — Histoire complète et chronologie.</li>
-          <li><strong>Factions</strong> — Les quatre puissances humaines qui s'affrontent.</li>
-          <li><strong>Système</strong> — Éclats, corruption, règles RP/PvP.</li>
-          <li><strong>Events & Staff</strong> — Comment fonctionnent les événements et le staff.</li>
+          <li>Lire le <a href="lore.html">Lore</a> et la <a href="chronologie.html">Chronologie</a>.</li>
+          <li>Choisir une faction : <a href="factions.html">Factions</a>.</li>
+          <li>Comprendre les mécaniques : <a href="systeme.html">Système</a>, <a href="eclats.html">Éclats</a>, <a href="corruption.html">Corruption</a>.</li>
+          <li>Consulter le <a href="reglement.html">Règlement</a> avant de rejoindre.</li>
         </ul>
-
-        <h2 style="margin-top:14px">Démarrage</h2>
-        <p class="muted">Regarde la page <a href="lore.html">Lore</a> pour l’histoire, puis choisis une faction sur <a href="factions.html">Factions</a>. Besoin d'aide ? <a href="staff.html">Contacte le staff</a>.</p>
       </section>
 
       <aside class="aside card">
-        <h3>Ressources</h3>
+        <h3>Ressources rapides</h3>
         <p class="muted"><strong>Mods recommandés :</strong> Pippi, Emberlight, RA: Character Customization, Savage Wilds (optionnel).</p>
         <h4 style="margin-top:10px">Contact</h4>
-        <p class="muted">Discord — @LeadAdmin • #staff-help</p>
+        <p class="muted">Discord : @LeadAdmin • #staff-help</p>
         <div style="margin-top:12px">
           <button onclick="window.print()" style="background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer">Imprimer / PDF</button>
         </div>
@@ -86,6 +82,6 @@ h1{color:var(--gold);margin:0 0 8px 0}
     </div>
   </main>
 
-  <footer class="footer">© Les Éclats de Vhar'Kûn — Dark Fantasy RP • Prépare ton destin.</footer>
+  <footer class="footer">© Les Éclats de Vhar'Kûn — Dark Fantasy RP</footer>
 </body>
 </html>
