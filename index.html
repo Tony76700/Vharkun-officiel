@@ -1,199 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Vharkun — Serveur RP (Accueil)</title>
-<link rel="icon" href="images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vharkun - Accueil</title>
+
 <style>
-/* ===== Reset ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  background:linear-gradient(180deg,#060607,#0d0d0d);
-  color:#e8e6e3;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* ===== STYLE GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b0b0b;
+    color: #d8d8d8;
 }
 
-/* ===== Header ===== */
-.header{
-  position:sticky;top:0;z-index:999;background:linear-gradient(180deg,#0b0b0b,#0f0f0f);
-  border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(4px);
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #121212;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #444;
 }
-.header-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo-mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(180deg,#7f0000,#2f0000);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
-.brand-title{font-weight:700;color:#d0b26b;letter-spacing:1px}
-.header-right{margin-left:auto;display:flex;align-items:center;gap:10px}
 
-/* ===== Nav desktop ===== */
-.nav {display:flex; gap:8px; align-items:center;}
-.menu{list-style:none;display:flex;gap:6px}
-.menu a{color:#e8e6e3;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:14px}
-.menu a:hover{background:rgba(255,255,255,0.02);color:#d0b26b}
-.menu .dropdown{position:relative}
-.dropdown-content{
-  position:absolute;top:40px;left:0;background:#0b0b0b;border:1px solid rgba(255,255,255,0.03);
-  padding:8px;border-radius:8px;min-width:190px;display:none;box-shadow:0 12px 30px rgba(0,0,0,0.6)
+.navbar-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d0b26b;
 }
-.dropdown-content a{display:block;padding:8px;border-radius:6px;color:#bfbfbf}
-.dropdown:hover .dropdown-content{display:block}
 
-/* ===== Mobile ===== */
-.hamburger{display:none;background:none;border:0;color:#e8e6e3;font-size:24px;cursor:pointer}
-.mobile-menu{display:none;position:absolute;right:12px;top:64px;background:#0b0b0b;border:1px solid rgba(255,255,255,0.03);padding:12px;border-radius:8px;min-width:200px}
-.mobile-menu a{display:block;padding:8px;color:#d9d9d9;text-decoration:none;border-radius:6px}
-.mobile-menu a:hover{background:rgba(255,255,255,0.02);color:#d0b26b}
+/* ===== MENU DESKTOP ===== */
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
 
-/* ===== Hero ===== */
-.hero{height:420px;display:flex;align-items:center;justify-content:center;margin-top:12px}
-.hero-inner{max-width:1200px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.15));border:1px solid rgba(255,255,255,0.02)}
-.hero-title{font-size:44px;font-weight:700;color:#d0b26b;font-family:serif;text-align:center}
+.nav-links a {
+    text-decoration: none;
+    color: #d8d8d8;
+    font-weight: bold;
+}
 
-/* fallback banner: use images/banner.png if present */
-.hero { background-color:#070707; background-image: url('images/banner.png'); background-size:cover; background-position:center; border-radius:12px; margin:18px auto; width:calc(100% - 40px); max-width:1200px; height:420px; }
+.nav-links a:hover {
+    color: #d0b26b;
+}
 
-/* ===== Content ===== */
-.container{max-width:1100px;margin:30px auto;padding:18px}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-h1{color:#d0b26b}
-h2{color:#d0b26b;margin-top:12px}
-p{color:#cfcfcf;margin:8px 0;line-height:1.6}
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
 
-/* ===== Footer ===== */
-footer{max-width:1100px;margin:28px auto 60px;padding:18px;text-align:center;color:#7d7d7d;border-top:1px solid rgba(255,255,255,0.02)}
+/* ===== MENU MOBILE ===== */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #121212;
+    padding: 15px;
+    border-bottom: 2px solid #444;
+}
 
-/* ===== Responsive ===== */
-@media(max-width:980px){
-  .menu { display:none; }
-  .hamburger{display:block}
-  .hero{height:260px}
-  .hero-title{font-size:28px}
+.mobile-menu a {
+    text-decoration: none;
+    color: #d8d8d8;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-menu a:hover {
+    color: #d0b26b;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background-image: url('images/banner.png');
+    background-size: cover;
+    background-position: center;
+    width: calc(100% - 40px);
+    height: 420px;
+    border-radius: 12px;
+    margin: 25px auto 10px auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 45px;
+    color: #d0b26b;
+    font-weight: bold;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.9);
+}
+
+/* ===== CONTENU ===== */
+.container {
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+h1 {
+    color: #d0b26b;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 0 0 8px rgba(208,178,107,0.4);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 840px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
 }
 </style>
+
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
-    <div class="brand">
-      <div class="logo-mark">V</div>
-      <div>
-        <div class="brand-title">Les Éclats de Vhar'Kûn</div>
-        <div style="font-size:12px;color:#9aa0a3">Dark Fantasy — Serveur RP</div>
-      </div>
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="races.html">Races</a>
+        <a href="classes.html">Classes</a>
+        <a href="bestiaire.html">Bestiaire</a>
+        <a href="carte.html">Carte</a>
+        <a href="chronologie.html">Chronologie</a>
+        <a href="systeme.html">Système</a>
+        <a href="rules.html">Règlement</a>
+        <a href="staff.html">Staff</a>
+        <a href="contact.html">Contact</a>
     </div>
 
-    <div class="header-right">
-      <!-- desktop nav -->
-      <nav class="nav" aria-label="Navigation principale">
-        <ul class="menu" role="menubar">
-          <li><a href="index.html">Accueil</a></li>
-
-          <li class="dropdown">
-            <a href="#">Univers ▾</a>
-            <div class="dropdown-content" role="menu">
-              <a href="lore.html">Lore</a>
-              <a href="chronologie.html">Chronologie</a>
-              <a href="factions.html">Factions</a>
-              <a href="classes.html">Classes</a>
-              <a href="bestiaire.html">Bestiaire</a>
-            </div>
-          </li>
-
-          <li class="dropdown">
-            <a href="#">Systèmes ▾</a>
-            <div class="dropdown-content" role="menu">
-              <a href="reglement.html">Règlement</a>
-              <a href="systeme.html">Système</a>
-              <a href="eclats.html">Éclats</a>
-              <a href="corruption.html">Corruption</a>
-              <a href="economie.html">Économie</a>
-            </div>
-          </li>
-
-          <li><a href="politique.html">Politique</a></li>
-          <li><a href="carte.html">Carte</a></li>
-
-          <li class="dropdown">
-            <a href="#">Wiki ▾</a>
-            <div class="dropdown-content" role="menu">
-              <a href="wiki.html">Index</a>
-              <a href="events.html">Events</a>
-              <a href="mods.html">Mods</a>
-              <a href="faq.html">FAQ</a>
-            </div>
-          </li>
-
-          <li class="dropdown">
-            <a href="#">Staff ▾</a>
-            <div class="dropdown-content" role="menu">
-              <a href="staff.html">Équipe</a>
-              <a href="contact.html">Contact</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- hamburger -->
-      <button class="hamburger" aria-label="Ouvrir le menu" onclick="toggleMobile()">☰</button>
-    </div>
-  </div>
-
-  <!-- mobile menu -->
-  <div id="mobileMenu" class="mobile-menu" style="display:none">
-    <a href="index.html">Accueil</a>
-    <a href="lore.html">Lore</a>
-    <a href="chronologie.html">Chronologie</a>
-    <a href="factions.html">Factions</a>
-    <a href="classes.html">Classes</a>
-    <a href="bestiaire.html">Bestiaire</a>
-    <a href="reglement.html">Règlement</a>
-    <a href="systeme.html">Système</a>
-    <a href="eclats.html">Éclats</a>
-    <a href="corruption.html">Corruption</a>
-    <a href="economie.html">Économie</a>
-    <a href="politique.html">Politique</a>
-    <a href="carte.html">Carte</a>
-    <a href="wiki.html">Wiki</a>
-    <a href="events.html">Events</a>
-    <a href="mods.html">Mods</a>
-    <a href="faq.html">FAQ</a>
-    <a href="staff.html">Staff</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<div class="hero" role="img" aria-label="Bannière du serveur">
-  <div class="hero-inner">
-    <div class="hero-title">Les Éclats de Vhar'Kûn</div>
-  </div>
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
 </div>
 
-<!-- MAIN -->
-<main class="container">
-  <section class="card">
-    <h1>Bienvenue</h1>
-    <p>Bienvenue sur le site officiel du serveur RP <strong>Vharkun</strong>. Ce monde dark-fantasy est centré sur la survie, l'intrigue et la corruption des Éclats.</p>
-    <h2>Commencer</h2>
-    <p>Pour démarrer : consulte le <a href="lore.html">Lore</a>, choisis une faction (<a href="factions.html">Factions</a>), et lis le <a href="reglement.html">Règlement</a>.</p>
-  </section>
-</main>
+<!-- ===== MENU MOBILE ===== -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="races.html">Races</a>
+    <a href="classes.html">Classes</a>
+    <a href="bestiaire.html">Bestiaire</a>
+    <a href="carte.html">Carte</a>
+    <a href="chronologie.html">Chronologie</a>
+    <a href="systeme.html">Système</a>
+    <a href="rules.html">Règlement</a>
+    <a href="staff.html">Staff</a>
+    <a href="contact.html">Contact</a>
+</div>
 
-<footer>
-  © 2025 Les Éclats de Vhar'Kûn — Serveur RP
-</footer>
+<!-- ===== HERO ===== -->
+<div class="hero">
+    <div class="hero-title">Bienvenue à Vharkun</div>
+</div>
 
+<!-- ===== CONTENU ===== -->
+<div class="container">
+    <h1>Explorez un monde sombre, mystique et vivant</h1>
+    <p style="text-align:center;">
+        Découvrez un univers riche, ses peuples, ses secrets et ses conflits.<br>
+        Choisissez votre voie. Forgez votre histoire.
+    </p>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    Vharkun © 2025 – Projet RP Fantasy
+</div>
+
+<!-- ===== SCRIPT MENU ===== -->
 <script>
 function toggleMobile(){
-  const el = document.getElementById('mobileMenu');
-  el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-  // close dropdowns if opened
-  if(el.style.display === 'block'){ window.scrollTo(0,0) }
+    const menu = document.getElementById('mobileMenu');
+    const open = (menu.style.display === 'block');
+    menu.style.display = open ? 'none' : 'block';
 }
+
+document.addEventListener('click', function(e){
+    const menu = document.getElementById('mobileMenu');
+    const button = document.querySelector('.hamburger');
+
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.style.display = 'none';
+    }
+});
 </script>
+
 </body>
 </html>
