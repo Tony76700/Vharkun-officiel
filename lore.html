@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vharkun — Lore</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#d8d8d8;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+}
+.navbar-title{
+    color:#d0b26b;
+    font-size:22px;
+    font-weight:bold;
+}
+.nav-links{
+    display:flex;
+    gap:18px;
+}
+.nav-links a{
+    color:#d8d8d8;
+    text-decoration:none;
+    font-weight:bold;
+}
+.nav-links a:hover{color:#d0b26b;}
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    padding:10px 0;
+    border-bottom:1px solid #333;
+}
+.mobile-menu a:hover{color:#d0b26b;}
+
+@media(max-width:840px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+
+/* CONTENT */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+h1,h2{
+    color:#d0b26b;
+    text-shadow:0 0 6px rgba(208,178,107,0.4);
+}
+h1{text-align:center;}
+.section{
+    margin-top:35px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="classes.html">Classes</a>
+        <a href="rules.html">Règlement</a>
+        <a href="staff.html">Staff</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="classes.html">Classes</a>
+    <a href="rules.html">Règlement</a>
+    <a href="staff.html">Staff</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h1>Lore de Vharkun</h1>
+
+<div class="section">
+<h2>Prologue — Le Monde Avant la Chute</h2>
+<p>
+Bien avant que le nom de Vharkun ne soit murmuré avec crainte, le continent était connu sous celui de Vhar’Kûn, un royaume humain vaste, orgueilleux et divisé.
+</p>
+<p>
+Les cités prospéraient, reliées par des routes de pierre et protégées par des serments plus solides que l’acier. La magie existait déjà, mais elle était rare, redoutée et strictement surveillée par les Ordres royaux.
+</p>
+<p>
+Les rois humains régnaient par la loi, l’épée et la foi. Aucun dieu n’était unanimement accepté, mais tous craignaient les mêmes forces : celles qui dormaient sous la terre.
+</p>
+</div>
+
+<div class="section">
+<h2>Les Éclats</h2>
+<p>
+La chute du royaume débuta le jour où les Éclats furent découverts.
+</p>
+<p>
+Des fragments cristallins, pulsant d’une lumière sombre, exhumés des profondeurs lors de fouilles interdites. Ces Éclats offraient pouvoir, longévité, visions… et corruption.
+</p>
+<p>
+Les premiers à les manier furent acclamés comme des sauveurs. Les cités gagnèrent en puissance militaire, les seigneurs humains défièrent les lois naturelles, et les guerres cessèrent temporairement.
+</p>
+<p>
+Mais chaque usage laissait une trace. Sur l’âme. Sur le corps. Sur le monde.
+</p>
+</div>
+
+<div class="section">
+<h2>La Grande Ruine</h2>
+<p>
+Lorsque les Éclats furent utilisés sans retenue, le monde répondit.
+</p>
+<p>
+Des villes entières furent englouties. Le ciel s’assombrit durant des années. Les terres se fissurèrent, libérant des créatures difformes issues de la corruption.
+</p>
+<p>
+Le roi mourut sans héritier reconnu. Les Ordres s’effondrèrent. La foi se fragmenta. Ce fut le début de la Grande Ruine.
+</p>
+</div>
+
+<div class="section">
+<h2>Vharkun — Le Royaume Brisé</h2>
+<p>
+Aujourd’hui, Vhar’Kûn est appelé Vharkun.
+</p>
+<p>
+Un royaume humain dévasté, morcelé entre factions rivales, seigneurs de guerre, cultes secrets et survivants désabusés.
+</p>
+<p>
+Les Éclats existent toujours. Rares. Interdits. Recherchés.
+</p>
+<p>
+Certains affirment qu’ils sont la seule chance de renaissance. D’autres qu’ils signeront la fin définitive de l’humanité.
+</p>
+</div>
+
+<div class="section">
+<h2>Les Humains</h2>
+<p>
+Il n’existe plus que les humains.
+</p>
+<p>
+Les mythes parlent d’autres races, mais elles ne sont que légendes ou mensonges anciens. Tous les personnages jouables sont humains, façonnés par la guerre, la foi, la survie ou l’ambition.
+</p>
+<p>
+Chaque humain porte en lui la possibilité de devenir un héros… ou un monstre.
+</p>
+</div>
+
+<div class="section">
+<h2>Présent et Avenir</h2>
+<p>
+Vharkun n’est pas un monde figé.
+</p>
+<p>
+Les joueurs façonnent son avenir par leurs choix, leurs alliances et leur rapport aux Éclats.
+</p>
+<p>
+Le trône est vide. Les frontières sont instables. La corruption progresse.
+</p>
+<p>
+Le prochain chapitre n’a pas encore été écrit.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Vharkun © 2025 — Lore officiel
+</div>
+
+<script>
+function toggleMobile(){
+    const menu=document.getElementById('mobileMenu');
+    menu.style.display=(menu.style.display==='block')?'none':'block';
+}
+document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobileMenu');
+    const btn=document.querySelector('.hamburger');
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+        menu.style.display='none';
+    }
+});
+</script>
+
+</body>
+</html>
