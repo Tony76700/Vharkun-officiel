@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vharkun — Politique</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#d8d8d8;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+}
+.navbar-title{color:#d0b26b;font-size:22px;font-weight:bold;}
+.nav-links{display:flex;gap:18px;}
+.nav-links a{color:#d8d8d8;text-decoration:none;font-weight:bold;}
+.nav-links a:hover{color:#d0b26b;}
+.hamburger{display:none;font-size:28px;cursor:pointer;}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    padding:10px 0;
+    border-bottom:1px solid #333;
+}
+.mobile-menu a:hover{color:#d0b26b;}
+
+@media(max-width:840px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+h1,h2,h3{
+    color:#d0b26b;
+    text-shadow:0 0 6px rgba(208,178,107,0.4);
+}
+.section{margin-top:35px;}
+
+.claimant{
+    background:#141414;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:24px;
+    margin-top:25px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="classes.html">Classes</a>
+        <a href="rules.html">Règlement</a>
+        <a href="staff.html">Staff</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="classes.html">Classes</a>
+    <a href="rules.html">Règlement</a>
+    <a href="staff.html">Staff</a>
+</div>
+
+<div class="container">
+
+<h1>Politique et Prétendants au Trône</h1>
+
+<div class="section">
+<h2>Un Trône Vacant</h2>
+<p>
+Depuis la chute du dernier roi, le trône de Vharkun demeure vacant.
+</p>
+<p>
+Chaque prétendant affirme être le seul capable de sauver le royaume.
+</p>
+</div>
+
+<div class="claimant">
+<h3>Le Régent de la Couronne Brisée</h3>
+<p>
+Ancien conseiller royal, il revendique la légitimité par la tradition.
+</p>
+<p>
+Il promet stabilité et retour à l’ordre, mais son pouvoir est fragile.
+</p>
+</div>
+
+<div class="claimant">
+<h3>La Dame des Cendres</h3>
+<p>
+Cheffe charismatique issue des guerres civiles.
+</p>
+<p>
+Elle veut refonder Vharkun par la force et l’épuration.
+</p>
+</div>
+
+<div class="claimant">
+<h3>Le Prophète Voilé</h3>
+<p>
+Figure mystérieuse liée aux Éclats.
+</p>
+<p>
+Il prétend que la corruption est une étape nécessaire à l’évolution.
+</p>
+</div>
+
+<div class="claimant">
+<h3>Le Conseil des Communes</h3>
+<p>
+Gouvernement collégial formé par les cités libres.
+</p>
+<p>
+Ils rejettent la monarchie au profit d’un pouvoir partagé.
+</p>
+</div>
+
+<div class="section">
+<h2>Évolution RP</h2>
+<p>
+Aucun prétendant n’est garanti vainqueur.
+</p>
+<p>
+Les choix des joueurs et les events décideront de l’avenir du royaume.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Vharkun © 2025 — Politique
+</div>
+
+<script>
+function toggleMobile(){
+    const menu=document.getElementById('mobileMenu');
+    menu.style.display=(menu.style.display==='block')?'none':'block';
+}
+document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobileMenu');
+    const btn=document.querySelector('.hamburger');
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+        menu.style.display='none';
+    }
+});
+</script>
+
+</body>
+</html>
