@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vharkun — Staff</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#d8d8d8;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.navbar-title{
+    color:#d0b26b;
+    font-size:22px;
+    font-weight:bold;
+}
+.nav-links{
+    display:flex;
+    gap:18px;
+}
+.nav-links a,
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    font-weight:bold;
+}
+.nav-links a:hover,
+.mobile-menu a:hover{
+    color:#d0b26b;
+}
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px 20px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    padding:12px 0;
+    border-bottom:1px solid #333;
+}
+
+/* CONTENT */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+h1,h2,h3{
+    color:#d0b26b;
+    text-shadow:0 0 6px rgba(208,178,107,0.4);
+}
+.section{
+    margin-bottom:40px;
+}
+
+.role{
+    background:#141414;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:24px;
+    margin-top:25px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+    font-size:14px;
+    border-top:1px solid #333;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="classes.html">Classes</a>
+        <a href="rules.html">Règlement</a>
+        <a href="events.html">Événements</a>
+        <a href="staff.html">Staff</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="classes.html">Classes</a>
+    <a href="rules.html">Règlement</a>
+    <a href="events.html">Événements</a>
+    <a href="staff.html">Staff</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h1>Le Staff de Vharkun</h1>
+
+<div class="section">
+<p>
+Le staff est garant du bon déroulement du RP, de l’équilibre du monde
+et du respect de l’univers de Vharkun.
+</p>
+<p>
+Il n’est ni juge absolu ni protagoniste, mais un guide impartial.
+</p>
+</div>
+
+<div class="role">
+<h2>Fondateur</h2>
+<p>
+Responsable de la vision globale du serveur.
+</p>
+<ul>
+<li>Décisions finales</li>
+<li>Orientation du lore</li>
+<li>Gestion du staff</li>
+</ul>
+</div>
+
+<div class="role">
+<h2>Administrateur</h2>
+<p>
+Gestion technique et organisationnelle.
+</p>
+<ul>
+<li>Serveur et mods</li>
+<li>Règlement</li>
+<li>Support staff</li>
+</ul>
+</div>
+
+<div class="role">
+<h2>Maître du Jeu (MJ)</h2>
+<p>
+Animateur du monde et des événements RP.
+</p>
+<ul>
+<li>Events scénarisés</li>
+<li>PNJ</li>
+<li>Intrigues politiques</li>
+</ul>
+</div>
+
+<div class="role">
+<h2>Modérateur</h2>
+<p>
+Veille au respect des règles et à la bonne entente.
+</p>
+<ul>
+<li>Gestion des conflits</li>
+<li>Sanctions RP / HRP</li>
+<li>Aide aux joueurs</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Recrutement</h2>
+<p>
+Le staff est recruté selon l’implication, la maturité et la qualité RP.
+</p>
+<p>
+Toute candidature se fait via Discord.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Vharkun © 2025 — Staff
+</div>
+
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+document.addEventListener("click", function(e){
+    const menu = document.getElementById("mobileMenu");
+    const burger = document.querySelector(".hamburger");
+    if(menu.style.display === "flex" && !menu.contains(e.target) && !burger.contains(e.target)){
+        menu.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
