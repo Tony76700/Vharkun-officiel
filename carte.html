@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Vharkun — Carte du Monde</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:#ddd;
+    font-family:Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.navbar-title{
+    color:#d0b26b;
+    font-size:22px;
+    font-weight:bold;
+}
+.nav-links{
+    display:flex;
+    gap:18px;
+}
+.nav-links a,
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    font-weight:bold;
+}
+.nav-links a:hover,
+.mobile-menu a:hover{
+    color:#d0b26b;
+}
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px 20px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    padding:12px 0;
+    border-bottom:1px solid #333;
+}
+
+/* CONTENT */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+h1{
+    color:#d0b26b;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.map-wrapper{
+    position:relative;
+    border:2px solid #333;
+}
+.map-wrapper img{
+    width:100%;
+    display:block;
+}
+
+/* ZONES CLIQUABLES */
+.zone{
+    position:absolute;
+    border:2px solid rgba(208,178,107,0.6);
+    cursor:pointer;
+}
+.zone:hover{
+    background:rgba(208,178,107,0.15);
+}
+
+.tooltip{
+    position:absolute;
+    background:#111;
+    color:#d0b26b;
+    padding:6px 10px;
+    font-size:14px;
+    border-radius:6px;
+    display:none;
+    pointer-events:none;
+    z-index:10;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="carte.html">Carte</a>
+        <a href="factions.html">Factions</a>
+        <a href="events.html">Événements</a>
+        <a href="staff.html">Staff</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="carte.html">Carte</a>
+    <a href="factions.html">Factions</a>
+    <a href="events.html">Événements</a>
+    <a href="staff.html">Staff</a>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+<h1>Carte du Monde — Desolate Lands</h1>
+
+<div class="map-wrapper">
+<img src="images/desolate_map.jpg" alt="Carte Desolate Lands">
+
+<!-- EXEMPLE DE ZONE -->
+<a href="lore.html">
+<div class="zone" style="top:35%; left:40%; width:10%; height:8%;"
+onmouseenter="showTip(event,'Ruines de Vharkun')"
+onmouseleave="hideTip()"></div>
+</a>
+
+<div id="tooltip" class="tooltip"></div>
+</div>
+
+<p style="text-align:center; margin-top:20px;">
+Clique sur une région pour en apprendre plus.
+</p>
+</div>
+
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+document.addEventListener("click", function(e){
+    const menu = document.getElementById("mobileMenu");
+    const burger = document.querySelector(".hamburger");
+    if(menu.style.display === "flex" && !menu.contains(e.target) && !burger.contains(e.target)){
+        menu.style.display = "none";
+    }
+});
+
+function showTip(e,text){
+    const tip = document.getElementById("tooltip");
+    tip.innerHTML = text;
+    tip.style.display = "block";
+    tip.style.left = e.pageX + 10 + "px";
+    tip.style.top = e.pageY + 10 + "px";
+}
+function hideTip(){
+    document.getElementById("tooltip").style.display = "none";
+}
+</script>
+
+</body>
+</html>
