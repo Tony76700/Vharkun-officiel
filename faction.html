@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vharkun — Factions</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#d8d8d8;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+}
+.navbar-title{color:#d0b26b;font-size:22px;font-weight:bold;}
+.nav-links{display:flex;gap:18px;}
+.nav-links a{color:#d8d8d8;text-decoration:none;font-weight:bold;}
+.nav-links a:hover{color:#d0b26b;}
+.hamburger{display:none;font-size:28px;cursor:pointer;}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    padding:10px 0;
+    border-bottom:1px solid #333;
+}
+.mobile-menu a:hover{color:#d0b26b;}
+
+@media(max-width:840px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+h1,h2,h3{
+    color:#d0b26b;
+    text-shadow:0 0 6px rgba(208,178,107,0.4);
+}
+.section{margin-top:35px;}
+
+.faction{
+    background:#141414;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:24px;
+    margin-top:25px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="classes.html">Classes</a>
+        <a href="rules.html">Règlement</a>
+        <a href="staff.html">Staff</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="wiki.html">Wiki</a>
+    <a href="classes.html">Classes</a>
+    <a href="rules.html">Règlement</a>
+    <a href="staff.html">Staff</a>
+</div>
+
+<div class="container">
+
+<h1>Les Factions de Vharkun</h1>
+
+<div class="section">
+<h2>Structure</h2>
+<p>
+Les factions représentent les forces majeures qui façonnent l’avenir du royaume.
+</p>
+<p>
+Elles peuvent être politiques, religieuses, militaires ou clandestines.
+</p>
+</div>
+
+<div class="faction">
+<h3>La Couronne Brisée</h3>
+<p>
+Vestige du pouvoir royal, cette faction regroupe les derniers loyalistes du trône.
+</p>
+<p>
+Ils cherchent à restaurer l’ordre ancien, quel qu’en soit le prix.
+</p>
+</div>
+
+<div class="faction">
+<h3>Les Cendres Noires</h3>
+<p>
+Coalition de seigneurs de guerre, mercenaires et opportunistes.
+</p>
+<p>
+Ils croient que Vharkun doit renaître par la force et le sang.
+</p>
+</div>
+
+<div class="faction">
+<h3>L’Ordre du Voile</h3>
+<p>
+Organisation secrète liée aux Éclats et à la corruption.
+</p>
+<p>
+Leurs véritables intentions restent inconnues.
+</p>
+</div>
+
+<div class="faction">
+<h3>Les Communes Libres</h3>
+<p>
+Regroupement de cités indépendantes et de guildes marchandes.
+</p>
+<p>
+Ils privilégient la survie et le commerce plutôt que la royauté.
+</p>
+</div>
+
+<div class="section">
+<h2>Création de faction</h2>
+<p>
+Les joueurs peuvent proposer la création de nouvelles factions via le staff.
+</p>
+<p>
+Chaque faction doit avoir une idéologie claire et un impact RP réel.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Vharkun © 2025 — Factions
+</div>
+
+<script>
+function toggleMobile(){
+    const menu=document.getElementById('mobileMenu');
+    menu.style.display=(menu.style.display==='block')?'none':'block';
+}
+document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobileMenu');
+    const btn=document.querySelector('.hamburger');
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+        menu.style.display='none';
+    }
+});
+</script>
+
+</body>
+</html>
