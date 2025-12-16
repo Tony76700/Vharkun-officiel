@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Carte du Monde — Desolate Lands</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             margin: 0;
@@ -12,86 +13,145 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
         h1 {
             margin: 20px 0;
         }
-        .map-container {
-            max-width: 1200px;
-            margin: auto;
+
+        nav {
+            background: #111;
+            padding: 10px;
+            border-bottom: 1px solid #333;
         }
-        img {
-            width: 100%;
-            height: auto;
-            border: 2px solid #333;
+
+        nav a {
+            color: #ddd;
+            margin-right: 20px;
+            text-decoration: none;
         }
+
         .hint {
             font-size: 0.9em;
             opacity: 0.7;
             margin: 10px 0 30px;
         }
+
+        /* Carte */
+        .map-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .map-wrapper img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            display: block;
+        }
+
+        /* Zones visibles */
+        .zone {
+            position: absolute;
+            opacity: 0.35;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .zone:hover {
+            opacity: 0.6;
+        }
+
+        /* Couleurs */
+        .vharkun { background-color: gold; }
+        .cendreval { background-color: darkred; }
+        .voilombre { background-color: teal; }
+        .marches { background-color: green; }
+
+        /* Légende */
+        .legend {
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: left;
+            background: #111;
+            padding: 15px;
+            border: 1px solid #333;
+        }
     </style>
 </head>
+
 <body>
-    
-<nav style="background:#111; padding:10px; border-bottom:1px solid #333;">
-    <a href="index.html" style="color:#ddd; margin-right:20px; text-decoration:none;">
-        🏠 Accueil
-    </a>
-    <a href="wiki.html" style="color:#ddd; text-decoration:none;">
-        📘 Wiki
-    </a>
+
+<nav>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="wiki.html">📘 Wiki</a>
 </nav>
 
 <h1>🗺️ Carte du Monde</h1>
 <p class="hint">Cliquez sur une région pour en découvrir l’histoire.</p>
 
-<div style="max-width:1200px; margin:20px auto; text-align:left; background:#111; padding:15px; border:1px solid #333;">
+<div class="legend">
     <h3>📍 Légende des Royaumes</h3>
     <ul>
-        <li><strong>👑 Royaume de Vharkûn</strong> — La Couronne Brisée (Trône vacant)</li>
-        <li><strong>🔥 Royaume de Cendreval</strong> — Les Cendres Noires (Militarisme)</li>
-        <li><strong>🕯️ Royaume de Voilombre</strong> — L’Ordre du Voile (Influence occulte)</li>
-        <li><strong>⚒️ Royaume des Marches Libres</strong> — Les Communes Libres (Cités indépendantes)</li>
+        <li><strong>👑 Royaume de Vharkûn</strong> — La Couronne Brisée</li>
+        <li><strong>🔥 Royaume de Cendreval</strong> — Les Cendres Noires</li>
+        <li><strong>🕯️ Royaume de Voilombre</strong> — L’Ordre du Voile</li>
+        <li><strong>⚒️ Royaume des Marches Libres</strong> — Les Communes Libres</li>
     </ul>
 </div>
 
+<div class="map-wrapper">
 
-<div class="map-container">
+    <!-- Image -->
     <img src="./images/desolate_map.png" usemap="#vharkunmap" alt="Carte de Vharkûn">
 
-  <map name="vharkunmap">
+    <!-- Zones visibles (approximatives, ajustables) -->
+    <a href="royaume-vharkun.html" class="zone vharkun"
+       style="top: 52%; left: 30%; width: 20%; height: 18%;"></a>
 
-    <area shape="poly"
-          coords="941,1061,839,1079,830,1135,939,1208,994,1220,982,1128"
-          href="royaume-vharkun.html"
-          title="Royaume de Vharkûn"
-          target="_self">
+    <a href="royaume-cendreval.html" class="zone cendreval"
+       style="top: 20%; left: 55%; width: 22%; height: 18%;"></a>
 
-    <area shape="poly"
-          coords="1326,413,1330,606,1582,645,1591,373"
-          href="royaume-cendreval.html"
-          title="Royaume de Cendreval"
-          target="_self">
+    <a href="royaume-voilombre.html" class="zone voilombre"
+       style="top: 55%; left: 55%; width: 22%; height: 18%;"></a>
 
-    <area shape="poly"
-          coords="1356,1059,1319,1301,1531,1296,1577,1080"
-          href="royaume-voilombre.html"
-          title="Royaume de Cendreval"
-          target="_self">
+    <a href="royaume-marches-libres.html" class="zone marches"
+       style="top: 72%; left: 40%; width: 30%; height: 18%;"></a>
 
-    <area shape="poly"
-          coords="1563,1741,1411,1637,1231,1704,1252,1816,1321,1839,1445,1809"
-          href="royaume-marches-libres.html"
-          title="Royaume des Marches Libres"
-          target="_self">
+    <!-- Image map (zones précises) -->
+    <map name="vharkunmap">
 
-</map>
-  
+        <area shape="poly"
+              coords="941,1061,839,1079,830,1135,939,1208,994,1220,982,1128"
+              href="royaume-vharkun.html"
+              title="Royaume de Vharkûn"
+              target="_self">
+
+        <area shape="poly"
+              coords="1326,413,1330,606,1582,645,1591,373"
+              href="royaume-cendreval.html"
+              title="Royaume de Cendreval"
+              target="_self">
+
+        <area shape="poly"
+              coords="1356,1059,1319,1301,1531,1296,1577,1080"
+              href="royaume-voilombre.html"
+              title="Royaume de Voilombre"
+              target="_self">
+
+        <area shape="poly"
+              coords="1563,1741,1411,1637,1231,1704,1252,1816,1321,1839,1445,1809"
+              href="royaume-marches-libres.html"
+              title="Royaume des Marches Libres"
+              target="_self">
+
+    </map>
+
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 <script>
-  imageMapResize();
+    imageMapResize();
 </script>
 
 </body>
