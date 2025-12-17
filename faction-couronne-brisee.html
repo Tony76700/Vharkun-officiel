@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Couronne Brisée — Faction</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#d8d8d8;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#121212;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #444;
+}
+.navbar-title{color:#d0b26b;font-size:22px;font-weight:bold;}
+.nav-links{display:flex;gap:18px;}
+.nav-links a{color:#d8d8d8;text-decoration:none;font-weight:bold;}
+.nav-links a:hover{color:#d0b26b;}
+.hamburger{display:none;font-size:28px;cursor:pointer;}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:#121212;
+    padding:15px;
+    border-bottom:2px solid #444;
+}
+.mobile-menu a{
+    color:#d8d8d8;
+    text-decoration:none;
+    padding:10px 0;
+    border-bottom:1px solid #333;
+}
+.mobile-menu a:hover{color:#d0b26b;}
+
+@media(max-width:840px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+}
+
+header{
+    background:linear-gradient(to right,#1a1a1a,#3a2a1a);
+    padding:50px 20px;
+    text-align:center;
+    border-bottom:1px solid #444;
+}
+
+header h1{
+    color:#d0b26b;
+    font-size:2.8em;
+    margin:0;
+    text-shadow:0 0 8px rgba(208,178,107,0.4);
+}
+
+header p{opacity:0.85;}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+h2{
+    color:#d0b26b;
+    border-bottom:1px solid #444;
+    padding-bottom:6px;
+    margin-top:40px;
+}
+
+.section{
+    margin-top:25px;
+    background:#141414;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:25px;
+}
+
+ul{margin-left:20px;}
+
+.footer-nav{
+    text-align:center;
+    margin:50px 0 30px;
+}
+
+.footer-nav a{
+    color:#d0b26b;
+    text-decoration:none;
+    margin:0 15px;
+}
+.footer-nav a:hover{text-decoration:underline;}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-title">Vharkun</div>
+    <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="lore.html">Lore</a>
+        <a href="carte.html">Carte</a>
+        <a href="factions.html">Factions</a>
+        <a href="wiki.html">Wiki</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">☰</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="lore.html">Lore</a>
+    <a href="carte.html">Carte</a>
+    <a href="factions.html">Factions</a>
+    <a href="wiki.html">Wiki</a>
+</div>
+
+<header>
+    <h1>La Couronne Brisée</h1>
+    <p>Héritiers d’un trône effondré, gardiens d’un ordre ancien</p>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>📜 Origines</h2>
+<p>
+Née de la chute du dernier souverain de Vharkûn, la Couronne Brisée rassemble
+les nobles déchus, chevaliers ruinés et érudits loyalistes refusant d’accepter
+la disparition de la monarchie.
+</p>
+<p>
+Ils croient que l’effondrement du royaume est la conséquence directe de
+l’abandon des lois anciennes et du sang royal.
+</p>
+</div>
+
+<div class="section">
+<h2>🎯 Idéologie</h2>
+<ul>
+<li>Le royaume doit être gouverné par un souverain légitime</li>
+<li>La stabilité prime sur la liberté</li>
+<li>Le sang et la lignée ont une valeur politique</li>
+<li>Le chaos est pire que la tyrannie</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🏛️ Organisation</h2>
+<p>
+La faction est divisée en Maisons Loyales, chacune revendiquant un lien avec
+l’ancienne dynastie. Les décisions majeures sont prises lors du Conclave Doré,
+où intrigues et trahisons sont monnaie courante.
+</p>
+</div>
+
+<div class="section">
+<h2>👑 Figures notables</h2>
+<ul>
+<li><strong>Le Régent d’Or</strong> — dirigeant provisoire autoproclamé</li>
+<li><strong>Dame Althéa Vorn</strong> — stratège politique</li>
+<li><strong>Ser Kael le Fidèle</strong> — commandant des lames royales</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>⚔️ Relations</h2>
+<ul>
+<li><strong>Cendres Noires</strong> : ennemis déclarés</li>
+<li><strong>Ordre du Voile</strong> : alliances occultes et méfiance</li>
+<li><strong>Communes Libres</strong> : tensions économiques</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🎭 Opportunités RP</h2>
+<ul>
+<li>Intrigues de cour</li>
+<li>Manipulation politique</li>
+<li>Espionnage et trahisons</li>
+<li>Quêtes liées au sang royal</li>
+</ul>
+</div>
+
+<div class="footer-nav">
+    <a href="royaume-vharkun.html">🏰 Royaume de Vharkûn</a>
+    <a href="carte.html">🗺️ Carte</a>
+    <a href="factions.html">📜 Factions</a>
+</div>
+
+</div>
+
+<div class="footer">
+Vharkun © 2025 — La Couronne Brisée
+</div>
+
+<script>
+function toggleMobile(){
+    const menu=document.getElementById('mobileMenu');
+    menu.style.display=(menu.style.display==='block')?'none':'block';
+}
+document.addEventListener('click',function(e){
+    const menu=document.getElementById('mobileMenu');
+    const btn=document.querySelector('.hamburger');
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+        menu.style.display='none';
+    }
+});
+</script>
+
+</body>
+</html>
