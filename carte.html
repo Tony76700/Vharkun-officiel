@@ -28,6 +28,7 @@
             color: #ddd;
             margin-right: 20px;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .hint {
@@ -56,17 +57,32 @@
             opacity: 0.35;
             cursor: pointer;
             transition: opacity 0.3s ease;
+            border-radius: 6px;
         }
 
         .zone:hover {
             opacity: 0.6;
         }
 
-        /* Couleurs */
+        /* Couleurs des royaumes */
         .vharkun { background-color: gold; }
         .cendreval { background-color: darkred; }
         .voilombre { background-color: teal; }
         .marches { background-color: green; }
+
+        /* Labels des royaumes */
+        .map-label {
+            position: absolute;
+            background: rgba(10,10,10,0.75);
+            border: 1px solid #cfa85a;
+            color: #cfa85a;
+            padding: 6px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            pointer-events: none;
+            text-shadow: 0 0 6px rgba(207,168,90,0.6);
+        }
 
         /* Légende */
         .legend {
@@ -103,9 +119,9 @@
 <div class="map-wrapper">
 
     <!-- Image -->
-    <img src="./images/desolate_map.png" usemap="#vharkunmap" alt="Carte de Vharkûn">
+    <img src="./images/desolate_map.png" usemap="#vharkunmap" alt="Carte du Monde">
 
-    <!-- Zones visibles (approximatives, ajustables) -->
+    <!-- Zones visibles -->
     <a href="royaume-vharkun.html" class="zone vharkun"
        style="top: 54%; left: 42%; width: 10%; height: 9%;"></a>
 
@@ -118,32 +134,34 @@
     <a href="royaume-marches-libres.html" class="zone marches"
        style="top: 80%; left: 60%; width: 20%; height: 15%;"></a>
 
-    <!-- Image map (zones précises) -->
+    <!-- Labels visibles -->
+    <div class="map-label" style="top: 52%; left: 44%;">👑 Vharkûn</div>
+    <div class="map-label" style="top: 18%; left: 68%;">🔥 Cendreval</div>
+    <div class="map-label" style="top: 53%; left: 68%;">🕯️ Voilombre</div>
+    <div class="map-label" style="top: 78%; left: 63%;">⚒️ Marches Libres</div>
+
+    <!-- Image map précise -->
     <map name="vharkunmap">
 
         <area shape="poly"
               coords="941,1061,839,1079,830,1135,939,1208,994,1220,982,1128"
               href="royaume-vharkun.html"
-              title="Royaume de Vharkûn"
-              target="_self">
+              title="Royaume de Vharkûn">
 
         <area shape="poly"
               coords="1326,413,1330,606,1582,645,1591,373"
               href="royaume-cendreval.html"
-              title="Royaume de Cendreval"
-              target="_self">
+              title="Royaume de Cendreval">
 
         <area shape="poly"
               coords="1356,1059,1319,1301,1531,1296,1577,1080"
               href="royaume-voilombre.html"
-              title="Royaume de Voilombre"
-              target="_self">
+              title="Royaume de Voilombre">
 
         <area shape="poly"
               coords="1563,1741,1411,1637,1231,1704,1252,1816,1321,1839,1445,1809"
               href="royaume-marches-libres.html"
-              title="Royaume des Marches Libres"
-              target="_self">
+              title="Royaume des Marches Libres">
 
     </map>
 
