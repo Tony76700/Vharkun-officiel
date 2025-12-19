@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Carte des Territoires — Vharkun</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:#e0e0e0;
+}
+
+/* NAV */
+nav{
+    background:#111;
+    padding:12px 20px;
+    border-bottom:1px solid #333;
+}
+nav a{
+    color:#ddd;
+    margin-right:20px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{color:#d0b26b;}
+
+/* TITRES */
+h1{
+    text-align:center;
+    margin:25px 0 10px;
+    color:#d0b26b;
+}
+.hint{
+    text-align:center;
+    opacity:0.7;
+    font-size:0.9em;
+    margin-bottom:25px;
+}
+
+/* MAP */
+.map-wrapper{
+    position:relative;
+    max-width:1200px;
+    margin:0 auto 30px;
+}
+.map-wrapper img{
+    width:100%;
+    display:block;
+    border:2px solid #333;
+}
+
+/* TERRITOIRES */
+.zone{
+    position:absolute;
+    opacity:0.35;
+    border:2px dashed rgba(255,255,255,0.3);
+    transition:opacity 0.3s;
+}
+.zone:hover{
+    opacity:0.6;
+}
+
+/* COULEURS */
+.vharkun{ background:#c9a437; }
+.cendreval{ background:#7a1f1f; }
+.voilombre{ background:#1e6b6b; }
+.marches{ background:#2f6b2f; }
+
+/* LEGENDE */
+.legend{
+    max-width:1200px;
+    margin:20px auto;
+    background:#111;
+    border:1px solid #333;
+    padding:15px;
+}
+.legend h3{margin-top:0;color:#d0b26b;}
+.legend span{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin-right:10px;
+    vertical-align:middle;
+}
+.footer{
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="carte.html">🗺️ Carte RP</a>
+    <a href="wiki.html">📘 Wiki</a>
+</nav>
+
+<h1>🧭 Carte des Territoires</h1>
+<p class="hint">
+Répartition actuelle des zones d’influence.  
+Évolutive selon les événements RP.
+</p>
+
+<div class="map-wrapper">
+
+    <img src="./images/desolate_map.png" alt="Carte des territoires">
+
+    <!-- ZONES TERRITORIALES (ajustables) -->
+    <div class="zone vharkun"
+         style="top:52%; left:40%; width:18%; height:14%;"></div>
+
+    <div class="zone cendreval"
+         style="top:18%; left:62%; width:20%; height:15%;"></div>
+
+    <div class="zone voilombre"
+         style="top:54%; left:62%; width:18%; height:14%;"></div>
+
+    <div class="zone marches"
+         style="top:78%; left:55%; width:25%; height:18%;"></div>
+
+</div>
+
+<div class="legend">
+    <h3>📍 Légende</h3>
+    <p><span class="vharkun"></span> Royaume de Vharkûn — La Couronne Brisée</p>
+    <p><span class="cendreval"></span> Royaume de Cendreval — Les Cendres Noires</p>
+    <p><span class="voilombre"></span> Royaume de Voilombre — L’Ordre du Voile</p>
+    <p><span class="marches"></span> Marches Libres — Les Communes Libres</p>
+</div>
+
+<div class="footer">
+Vharkun © 2025 — Carte territoriale (publique)
+</div>
+
+</body>
+</html>
