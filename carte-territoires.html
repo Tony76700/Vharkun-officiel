@@ -20,7 +20,7 @@ nav{
     border-bottom:1px solid #333;
 }
 nav a{
-    color:#ddd;
+    color:#ddd; PS : voici le code peux tu rajouter et je ferais un copier coller de tout 
     margin-right:20px;
     text-decoration:none;
     font-weight:bold;
@@ -52,15 +52,6 @@ h1{
     border:2px solid #333;
 }
 
-/* ===== FRONTIÈRES SIMPLES ===== */
-.frontier{
-    position:absolute;
-    border:2px dashed #d0b26b;
-    box-shadow:0 0 12px rgba(208,178,107,0.6);
-    opacity:0.85;
-    pointer-events:auto;
-}
-
 /* ===== QUADRILLAGE ===== */
 .grid-overlay{
     position:absolute;
@@ -72,7 +63,7 @@ h1{
     background-image:
         linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px);
-    background-size:100px 100px;
+    background-size: 100px 100px;
 }
 
 /* ===== COORDONNÉES ===== */
@@ -84,8 +75,27 @@ h1{
     opacity:0.9;
     pointer-events:none;
 }
-.coord-x{ top:-22px; }
-.coord-y{ left:-22px; }
+
+.coord-x{
+    top:-22px;
+}
+.coord-y{
+    left:-22px;
+}
+
+/* ===== TERRITOIRES ===== */
+.zone{
+    position:absolute;
+    opacity:0.35;
+    border:3px solid rgba(255,255,255,0.6);
+    box-shadow:0 0 15px rgba(255,255,255,0.25);
+}
+
+/* COULEURS */
+.vharkun{ background:#c9a437; }
+.cendreval{ background:#7a1f1f; }
+.voilombre{ background:#1e6b6b; }
+.marches{ background:#2f6b2f; }
 
 /* ===== LÉGENDE ===== */
 .legend{
@@ -121,7 +131,7 @@ h1{
 
 <nav>
     <a href="index.html">🏠 Accueil</a>
-    <a href="carte-territoires.html">🧭 Territoires</a>
+    <a href="carte.html">🗺️ Carte RP</a>
     <a href="wiki.html">📘 Wiki</a>
 </nav>
 
@@ -135,16 +145,10 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
     <!-- IMAGE -->
     <img src="./images/desolate_map.png" alt="Carte des territoires">
 
-    <!-- FRONTIÈRES (MODIFIABLES FACILEMENT) -->
-    <div class="frontier" style="top:54%; left:38%; width:16%; height:10%;"></div>
-    <div class="frontier" style="top:14%; left:62%; width:20%; height:16%;"></div>
-    <div class="frontier" style="top:52%; left:60%; width:20%; height:14%;"></div>
-    <div class="frontier" style="top:76%; left:58%; width:22%; height:16%;"></div>
-
     <!-- QUADRILLAGE -->
     <div class="grid-overlay"></div>
 
-    <!-- AXE X -->
+    <!-- AXE X (CHIFFRES) -->
     <div class="coord-x" style="left:8%;">1</div>
     <div class="coord-x" style="left:16%;">2</div>
     <div class="coord-x" style="left:24%;">3</div>
@@ -157,7 +161,7 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
     <div class="coord-x" style="left:80%;">10</div>
     <div class="coord-x" style="left:88%;">11</div>
 
-    <!-- AXE Y -->
+    <!-- AXE Y (LETTRES) -->
     <div class="coord-y" style="top:10%;">A</div>
     <div class="coord-y" style="top:20%;">B</div>
     <div class="coord-y" style="top:30%;">C</div>
@@ -168,14 +172,20 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
     <div class="coord-y" style="top:80%;">H</div>
     <div class="coord-y" style="top:90%;">I</div>
 
+    <!-- TERRITOIRES -->
+    <div class="zone vharkun" style="top:55%; left:40%; width:11%; height:5%;"></div>
+    <div class="zone cendreval" style="top:18%; left:65%; width:15%; height:13%;"></div>
+    <div class="zone voilombre" style="top:56%; left:62%; width:15%; height:10%;"></div>
+    <div class="zone marches" style="top:80%; left:60%; width:15%; height:11%;"></div>
+
 </div>
 
 <div class="legend">
     <h3>📍 Légende</h3>
-    <p><span style="background:#c9a437"></span> Royaume de Vharkûn</p>
-    <p><span style="background:#7a1f1f"></span> Royaume de Cendreval</p>
-    <p><span style="background:#1e6b6b"></span> Royaume de Voilombre</p>
-    <p><span style="background:#2f6b2f"></span> Marches Libres</p>
+    <p><span class="vharkun"></span> Royaume de Vharkûn — La Couronne Brisée</p>
+    <p><span class="cendreval"></span> Royaume de Cendreval — Les Cendres Noires</p>
+    <p><span class="voilombre"></span> Royaume de Voilombre — L’Ordre du Voile</p>
+    <p><span class="marches"></span> Marches Libres — Les Communes Libres</p>
 </div>
 
 <div class="footer">
