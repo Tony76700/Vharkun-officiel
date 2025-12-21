@@ -52,7 +52,7 @@ h1{
     border:2px solid #333;
 }
 
-/* ===== FRONTIÈRES ===== */
+/* ===== FRONTIÈRES SVG ===== */
 .map-frontiers{
     position:absolute;
     top:0;
@@ -63,12 +63,28 @@ h1{
 }
 
 .map-frontiers path{
-    fill:none;
+    fill-opacity:0.25;
+    stroke-width:4;
+    stroke-dasharray:12 7;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+}
+
+/* Couleurs par royaume */
+.front-vharkun{
+    fill:#c9a437;
     stroke:#d0b26b;
-    stroke-width:3;
-    stroke-dasharray:10 6;
-    opacity:0.85;
-    filter: drop-shadow(0 0 6px rgba(208,178,107,0.6));
+}
+.front-cendreval{
+    fill:#7a1f1f;
+    stroke:#b44;
+}
+.front-voilombre{
+    fill:#1e6b6b;
+    stroke:#4cc;
+}
+.front-marches{
+    fill:#2f6b2f;
+    stroke:#6c6;
 }
 
 /* ===== QUADRILLAGE ===== */
@@ -82,7 +98,7 @@ h1{
     background-image:
         linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px);
-    background-size: 100px 100px;
+    background-size:100px 100px;
 }
 
 /* ===== COORDONNÉES ===== */
@@ -97,19 +113,12 @@ h1{
 .coord-x{ top:-22px; }
 .coord-y{ left:-22px; }
 
-/* ===== TERRITOIRES ===== */
+/* ===== ZONES (repères internes optionnels) ===== */
 .zone{
     position:absolute;
-    opacity:0.35;
-    border:3px solid rgba(255,255,255,0.6);
-    box-shadow:0 0 15px rgba(255,255,255,0.25);
+    opacity:0.25;
+    border:2px solid rgba(255,255,255,0.4);
 }
-
-/* COULEURS */
-.vharkun{ background:#c9a437; }
-.cendreval{ background:#7a1f1f; }
-.voilombre{ background:#1e6b6b; }
-.marches{ background:#2f6b2f; }
 
 /* ===== LÉGENDE ===== */
 .legend{
@@ -145,7 +154,7 @@ h1{
 
 <nav>
     <a href="index.html">🏠 Accueil</a>
-    <a href="carte-territoires.html">🗺️ Carte RP</a>
+    <a href="carte-territoires.html">🧭 Territoires</a>
     <a href="wiki.html">📘 Wiki</a>
 </nav>
 
@@ -161,17 +170,23 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
 
     <!-- FRONTIÈRES -->
     <svg class="map-frontiers" viewBox="0 0 1200 800" preserveAspectRatio="none">
+
         <!-- Vharkûn -->
-        <path d="M470 470 L600 450 L640 500 L590 530 L500 520 Z" />
+        <path class="front-vharkun"
+              d="M470 470 L600 450 L660 500 L610 560 L500 540 L450 510 Z"/>
 
         <!-- Cendreval -->
-        <path d="M780 120 L960 140 L940 260 L780 250 Z" />
+        <path class="front-cendreval"
+              d="M760 130 L940 150 L960 260 L820 270 L750 210 Z"/>
 
         <!-- Voilombre -->
-        <path d="M760 450 L960 460 L940 560 L780 560 Z" />
+        <path class="front-voilombre"
+              d="M740 460 L920 450 L980 520 L920 600 L780 580 Z"/>
 
         <!-- Marches Libres -->
-        <path d="M740 640 L980 650 L960 780 L760 780 Z" />
+        <path class="front-marches"
+              d="M720 640 L980 650 L1000 780 L740 770 Z"/>
+
     </svg>
 
     <!-- QUADRILLAGE -->
@@ -201,20 +216,14 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
     <div class="coord-y" style="top:80%;">H</div>
     <div class="coord-y" style="top:90%;">I</div>
 
-    <!-- ZONES -->
-    <div class="zone vharkun" style="top:55%; left:40%; width:11%; height:5%;"></div>
-    <div class="zone cendreval" style="top:18%; left:65%; width:15%; height:13%;"></div>
-    <div class="zone voilombre" style="top:56%; left:62%; width:15%; height:10%;"></div>
-    <div class="zone marches" style="top:80%; left:60%; width:15%; height:11%;"></div>
-
 </div>
 
 <div class="legend">
     <h3>📍 Légende</h3>
-    <p><span class="vharkun"></span> Royaume de Vharkûn — La Couronne Brisée</p>
-    <p><span class="cendreval"></span> Royaume de Cendreval — Les Cendres Noires</p>
-    <p><span class="voilombre"></span> Royaume de Voilombre — L’Ordre du Voile</p>
-    <p><span class="marches"></span> Marches Libres — Les Communes Libres</p>
+    <p><span style="background:#c9a437"></span> Royaume de Vharkûn — La Couronne Brisée</p>
+    <p><span style="background:#7a1f1f"></span> Royaume de Cendreval — Les Cendres Noires</p>
+    <p><span style="background:#1e6b6b"></span> Royaume de Voilombre — L’Ordre du Voile</p>
+    <p><span style="background:#2f6b2f"></span> Marches Libres — Les Communes Libres</p>
 </div>
 
 <div class="footer">
