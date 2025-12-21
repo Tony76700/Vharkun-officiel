@@ -52,39 +52,13 @@ h1{
     border:2px solid #333;
 }
 
-/* ===== FRONTIÈRES SVG ===== */
-.map-frontiers{
+/* ===== FRONTIÈRES SIMPLES ===== */
+.frontier{
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:all;
-}
-
-.map-frontiers path{
-    fill-opacity:0.25;
-    stroke-width:4;
-    stroke-dasharray:12 7;
-    filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
-}
-
-/* Couleurs par royaume */
-.front-vharkun{
-    fill:#c9a437;
-    stroke:#d0b26b;
-}
-.front-cendreval{
-    fill:#7a1f1f;
-    stroke:#b44;
-}
-.front-voilombre{
-    fill:#1e6b6b;
-    stroke:#4cc;
-}
-.front-marches{
-    fill:#2f6b2f;
-    stroke:#6c6;
+    border:2px dashed #d0b26b;
+    box-shadow:0 0 12px rgba(208,178,107,0.6);
+    opacity:0.85;
+    pointer-events:auto;
 }
 
 /* ===== QUADRILLAGE ===== */
@@ -112,13 +86,6 @@ h1{
 }
 .coord-x{ top:-22px; }
 .coord-y{ left:-22px; }
-
-/* ===== ZONES (repères internes optionnels) ===== */
-.zone{
-    position:absolute;
-    opacity:0.25;
-    border:2px solid rgba(255,255,255,0.4);
-}
 
 /* ===== LÉGENDE ===== */
 .legend{
@@ -168,43 +135,11 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
     <!-- IMAGE -->
     <img src="./images/desolate_map.png" alt="Carte des territoires">
 
-    <!-- FRONTIÈRES -->
-    <svg class="map-frontiers" viewBox="0 0 1200 800" preserveAspectRatio="none">
-
-        <!-- Vharkûn -->
-    <path class="front-vharkun"
-    d="M460 480
-        C500 440, 590 430, 650 470
-        C690 510, 640 560, 580 580
-        C520 600, 470 560, 440 520
-        Z"/>
-
-        <!-- Cendreval -->
-    <path class="front-cendreval"
-    d="M740 150
-        C820 110, 930 130, 980 180
-        C1020 230, 950 290, 860 300
-        C790 310, 740 250, 720 210
-        Z"/>
-
-        <!-- Voilombre -->
-   <path class="front-voilombre"
-   d="M720 460
-       C780 430, 880 430, 940 470
-       C990 510, 960 580, 900 610
-       C830 640, 760 610, 720 560
-       Z"/>
-
-        <!-- Marches Libres -->
-  <path class="front-marches"
-  d="M700 640
-      C820 610, 980 630, 1040 690
-      C1080 740, 1020 800, 880 810
-      C760 820, 700 760, 680 700
-      Z"/>
-
-
-    </svg>
+    <!-- FRONTIÈRES (MODIFIABLES FACILEMENT) -->
+    <div class="frontier" style="top:54%; left:38%; width:16%; height:10%;"></div>
+    <div class="frontier" style="top:14%; left:62%; width:20%; height:16%;"></div>
+    <div class="frontier" style="top:52%; left:60%; width:20%; height:14%;"></div>
+    <div class="frontier" style="top:76%; left:58%; width:22%; height:16%;"></div>
 
     <!-- QUADRILLAGE -->
     <div class="grid-overlay"></div>
@@ -237,10 +172,10 @@ Carte publique à usage RP — Quadrillage utilisé pour conflits, expansion et 
 
 <div class="legend">
     <h3>📍 Légende</h3>
-    <p><span style="background:#c9a437"></span> Royaume de Vharkûn — La Couronne Brisée</p>
-    <p><span style="background:#7a1f1f"></span> Royaume de Cendreval — Les Cendres Noires</p>
-    <p><span style="background:#1e6b6b"></span> Royaume de Voilombre — L’Ordre du Voile</p>
-    <p><span style="background:#2f6b2f"></span> Marches Libres — Les Communes Libres</p>
+    <p><span style="background:#c9a437"></span> Royaume de Vharkûn</p>
+    <p><span style="background:#7a1f1f"></span> Royaume de Cendreval</p>
+    <p><span style="background:#1e6b6b"></span> Royaume de Voilombre</p>
+    <p><span style="background:#2f6b2f"></span> Marches Libres</p>
 </div>
 
 <div class="footer">
